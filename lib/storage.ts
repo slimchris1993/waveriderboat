@@ -1,5 +1,5 @@
 // Storage layer with two drivers:
-//  - Supabase (Postgres) when SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY are
+//  - Supabase (Postgres) when SUPABASE_URL + SUPABASE_SECRET_KEY are
 //    set — used in production on Vercel, where the filesystem is ephemeral.
 //    Single table `store` (bucket, key, value jsonb) — see supabase/schema.sql.
 //  - Local JSON files under data/ otherwise — used in dev, zero setup.
@@ -8,18 +8,20 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-const useSupabase = () =>
-  !!process.env.SUPABASE_URL && !!process.env.SUPABASE_SERVICE_ROLE_KEY;
+// Prefer the new revocable secret key (sb_secret_…, Dashboard → API Keys);
+// the legacy service_role JWT still works as a fallback during migration.
+const supabaseKey = () =>
+  process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+
+const useSupabase = () => !!process.env.SUPABASE_URL && !!supabaseKey();
 
 let _client: import("@supabase/supabase-js").SupabaseClient | null = null;
 async function supabase() {
   if (!_client) {
     const { createClient } = await import("@supabase/supabase-js");
-    _client = createClient(
-      process.env.SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!,
-      { auth: { persistSession: false } }
-    );
+    _client = createClient(process.env.SUPABASE_URL!, supabaseKey(), {
+      auth: { persistSession: false },
+    });
   }
   return _client;
 }
