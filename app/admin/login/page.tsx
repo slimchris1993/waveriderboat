@@ -1,4 +1,5 @@
 import { loginAction } from "@/app/admin/actions";
+import { LogoMark } from "@/components/LogoMark";
 
 export default async function AdminLoginPage({
   searchParams,
@@ -12,8 +13,11 @@ export default async function AdminLoginPage({
         action={loginAction}
         className="w-full max-w-sm rounded-2xl border border-line bg-surface p-8"
       >
-        <div className="font-display text-3xl">
-          WAVE<span className="text-accent">RIDER</span>
+        <div className="flex items-center gap-3 font-display text-3xl">
+          <LogoMark height={26} />
+          <span>
+            WAVE<span className="text-accent">RIDER</span>
+          </span>
         </div>
         <p className="mt-1 text-xs font-bold uppercase tracking-widest text-muted">
           Admin panel

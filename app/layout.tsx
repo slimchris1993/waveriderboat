@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "WAVERIDER",
   description:
     "High-performance electric surfboards, E-Foils, jet skis, boats and Honda-powered RIBs.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

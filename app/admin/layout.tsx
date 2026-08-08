@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { isAdmin } from "@/lib/admin";
 import { logoutAction } from "@/app/admin/actions";
+import { LogoMark } from "@/components/LogoMark";
 
 export const metadata = { title: "Admin — WAVERIDER" };
 
@@ -25,9 +26,12 @@ export default async function AdminLayout({
     <div className="min-h-screen">
       <header className="sticky top-0 z-10 border-b border-line bg-background/95 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-4">
-          <Link href="/admin" className="font-display text-xl tracking-wide">
-            WAVE<span className="text-accent">RIDER</span>{" "}
-            <span className="text-muted">ADMIN</span>
+          <Link href="/admin" className="flex items-center gap-2 font-display text-xl tracking-wide">
+            <LogoMark height={17} />
+            <span>
+              WAVE<span className="text-accent">RIDER</span>{" "}
+              <span className="text-muted">ADMIN</span>
+            </span>
           </Link>
           <nav className="flex flex-1 items-center gap-1 overflow-x-auto">
             {nav.map((n) => (

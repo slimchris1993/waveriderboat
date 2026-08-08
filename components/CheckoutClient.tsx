@@ -7,6 +7,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { BrandIcon, MastercardMark } from "@/components/BrandIcon";
+import { LogoMark } from "@/components/LogoMark";
 import type { PaymentMethodKey } from "@/lib/settings";
 import { WELCOME_CODE, WELCOME_DISCOUNT, WELCOME_MIN_SUBTOTAL } from "@/lib/discount";
 
@@ -147,8 +148,11 @@ export default function CheckoutClient({ mode, methodDetails, otherLabel, whatsa
   const shellHead = (
     <div className="border-b border-line bg-background/95">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
-        <a href="/index.html" className="font-display text-2xl tracking-wide">
-          WAVE<span className="text-accent">RIDER</span>
+        <a href="/index.html" className="flex items-center gap-2.5 font-display text-2xl tracking-wide">
+          <LogoMark height={19} />
+          <span>
+            WAVE<span className="text-accent">RIDER</span>
+          </span>
         </a>
         <a href="/cart.html" className="text-xs font-bold uppercase tracking-widest text-muted transition hover:text-accent">
           &larr; Back to cart
