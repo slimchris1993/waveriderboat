@@ -13,6 +13,12 @@ export type PaymentMethodKey =
 export type SiteSettings = {
   /** WhatsApp number with country code, digits only; empty hides the buttons */
   whatsapp: string;
+  /**
+   * Livechat provider embed snippet (Tawk.to, Crisp, Tidio…). When set it is
+   * injected into every storefront page and replaces the built-in chat
+   * bubble, so customers reach a real person instead of the canned replies.
+   */
+  livechatEmbed: string;
   socials: {
     instagram: string;
     facebook: string;
@@ -48,6 +54,7 @@ export const PAYMENT_METHOD_LABELS: Record<PaymentMethodKey, string> = {
 
 const DEFAULTS: SiteSettings = {
   whatsapp: "18312964971",
+  livechatEmbed: "",
   socials: { instagram: "", facebook: "", tiktok: "", youtube: "", x: "" },
   payments: {
     mode: "manual",
@@ -76,6 +83,7 @@ export async function getSettings(): Promise<SiteSettings> {
   if (!raw) return structuredClone(DEFAULTS);
   return {
     whatsapp: raw.whatsapp ?? DEFAULTS.whatsapp,
+    livechatEmbed: raw.livechatEmbed ?? "",
     socials: { ...DEFAULTS.socials, ...raw.socials },
     payments: {
       mode: raw.payments?.mode === "direct" ? "direct" : "manual",

@@ -50,24 +50,30 @@ export async function saveSettingsAction(formData: FormData) {
   const current = await getSettings();
   const str = (k: string) => String(formData.get(k) ?? "").trim();
 
-  await saveSettings({
-    whatsapp: str("whatsapp").replace(/[^\d]/g, ""),
-    socials: {
-      instagram: str("instagram"),
-      facebook: str("facebook"),
-      tiktok: str("tiktok"),
-      youtube: str("youtube"),
-      x: str("x"),
-    },
-    payments: {
-      mode: str("paymentMode") === "direct" ? "direct" : "manual",
-      methods: METHOD_KEYS.reduce(
-        (acc, key) => ({ ...acc, [key]: str(`method_${key}`) }),
-        { ...current.payments.methods }
-      ),
-      otherLabel: str("otherLabel"),
-    },
-  });
+  // A failed write must not look like a successful save.
+  try {
+    await saveSettings({
+      whatsapp: str("whatsapp").replace(/[^\d]/g, ""),
+      livechatEmbed: str("livechatEmbed"),
+      socials: {
+        instagram: str("instagram"),
+        facebook: str("facebook"),
+        tiktok: str("tiktok"),
+        youtube: str("youtube"),
+        x: str("x"),
+      },
+      payments: {
+        mode: str("paymentMode") === "direct" ? "direct" : "manual",
+        methods: METHOD_KEYS.reduce(
+          (acc, key) => ({ ...acc, [key]: str(`method_${key}`) }),
+          { ...current.payments.methods }
+        ),
+        otherLabel: str("otherLabel"),
+      },
+    });
+  } catch {
+    redirect("/admin/settings?saveerr=1");
+  }
   revalidatePath("/", "layout");
   redirect("/admin/settings?saved=1");
 }

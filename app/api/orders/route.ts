@@ -76,7 +76,20 @@ export async function POST(req: Request) {
     total: Math.round((subtotal - discount) * 100) / 100,
   };
 
-  await addOrder(order);
+  // A database outage must never cost a sale: if the write fails we still
+  // email the order to the owner and confirm to the customer, and shout in
+  // the logs so it can be reconciled.
+  let persisted = true;
+  try {
+    await addOrder(order);
+  } catch (e) {
+    persisted = false;
+    console.error(
+      `[orders] PERSIST FAILED for ${order.id} — captured by email only:`,
+      (e as Error)?.message,
+      JSON.stringify(order)
+    );
+  }
 
   // Emails are fire-and-forget — a mail outage must not lose the order
   void sendMail({
@@ -86,8 +99,10 @@ export async function POST(req: Request) {
   });
   void sendMail({
     to: OWNER(),
-    subject: `New order ${order.id} — $${order.total.toLocaleString("en-US")} (${order.paymentMode})`,
-    html: orderOwnerHtml(order),
+    subject:
+      `New order ${order.id} — $${order.total.toLocaleString("en-US")} (${order.paymentMode})` +
+      (persisted ? "" : " [DB SAVE FAILED — action needed]"),
+    html: orderOwnerHtml(order, persisted),
     replyTo: order.customer.email,
   });
 

@@ -37,6 +37,36 @@
     box.innerHTML = html;
   }
 
+  // Inject the owner's livechat provider snippet. innerHTML does not execute
+  // <script> tags, so each one is recreated as a real element.
+  function mountLivechat(embed) {
+    if (!embed || !embed.trim()) return false;
+    var host = document.createElement('div');
+    host.innerHTML = embed;
+    var scripts = host.querySelectorAll('script');
+    // non-script markup first (some providers ship a container div)
+    Array.prototype.forEach.call(host.childNodes, function (n) {
+      if (n.nodeName !== 'SCRIPT') document.body.appendChild(n.cloneNode(true));
+    });
+    Array.prototype.forEach.call(scripts, function (old) {
+      var s = document.createElement('script');
+      Array.prototype.forEach.call(old.attributes, function (a) {
+        s.setAttribute(a.name, a.value);
+      });
+      if (old.textContent) s.textContent = old.textContent;
+      document.body.appendChild(s);
+    });
+    return true;
+  }
+
+  // With a real livechat running, the built-in bubble would be a second,
+  // conflicting chat window — hide it.
+  function hideBuiltInChat() {
+    var panel = document.getElementById('rwChatPanel');
+    var wrap = panel && panel.parentElement;
+    if (wrap) wrap.style.display = 'none';
+  }
+
   function boot() {
     fetch('/api/settings')
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -44,6 +74,7 @@
         if (!s) return;
         if (typeof s.whatsapp === 'string') patchWhatsApp(s.whatsapp.replace(/[^\d]/g, ''));
         renderSocials(s.socials);
+        if (mountLivechat(s.livechatEmbed)) hideBuiltInChat();
       })
       .catch(function () { /* offline/static hosting — keep defaults */ });
   }

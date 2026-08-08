@@ -29,7 +29,16 @@ export async function POST(req: Request) {
     page: body.page ? String(body.page).slice(0, 300) : undefined,
   };
 
-  await addLead(lead);
+  // Same contract as orders: a storage failure must not cost the lead —
+  // the owner still gets the email, and the customer still gets their code.
+  try {
+    await addLead(lead);
+  } catch (e) {
+    console.error(
+      `[leads] PERSIST FAILED for ${lead.email} — captured by email only:`,
+      (e as Error)?.message
+    );
+  }
 
   // Popup leads get the $500 welcome code by email; every lead notifies
   // the owner, with Reply-To pointed at the lead.

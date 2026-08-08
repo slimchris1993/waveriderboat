@@ -34,10 +34,15 @@ const SOCIALS = [
 export default async function AdminSettingsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ saved?: string; pwsaved?: string; pwerr?: string }>;
+  searchParams: Promise<{
+    saved?: string;
+    saveerr?: string;
+    pwsaved?: string;
+    pwerr?: string;
+  }>;
 }) {
   await requireAdmin();
-  const { saved, pwsaved, pwerr } = await searchParams;
+  const { saved, saveerr, pwsaved, pwerr } = await searchParams;
   const s = await getSettings();
 
   return (
@@ -46,6 +51,16 @@ export default async function AdminSettingsPage({
       {saved && (
         <p className="mt-3 inline-block rounded-lg border border-good/40 bg-good/10 px-4 py-2 text-sm font-semibold text-good">
           Saved — live on the store now.
+        </p>
+      )}
+      {saveerr && (
+        <p className="mt-3 rounded-lg border border-bad/40 bg-bad/10 px-4 py-2 text-sm font-semibold text-bad">
+          Could not save — the database rejected the write. Open{" "}
+          <a href="/api/health" target="_blank" className="underline">
+            /api/health
+          </a>{" "}
+          to see what is wrong (usually supabase/schema.sql has not been run
+          yet).
         </p>
       )}
 
@@ -120,10 +135,10 @@ export default async function AdminSettingsPage({
           </div>
         </section>
 
-        {/* WhatsApp */}
+        {/* WhatsApp + livechat */}
         <section className="rounded-xl border border-line bg-surface p-5">
           <h2 className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted">
-            <BrandIcon name="whatsapp" size={14} /> WhatsApp
+            <BrandIcon name="whatsapp" size={14} /> WhatsApp &amp; livechat
           </h2>
           <label className="mt-4 block text-sm">
             <span className="font-semibold">WhatsApp number</span>{" "}
@@ -136,6 +151,21 @@ export default async function AdminSettingsPage({
               defaultValue={s.whatsapp}
               placeholder="18312964971"
               className={`${input} mt-1.5`}
+            />
+          </label>
+          <label className="mt-4 block text-sm">
+            <span className="font-semibold">Live chat embed code</span>{" "}
+            <span className="text-muted">
+              (paste the snippet from Tawk.to, Crisp, Tidio, etc. — it loads on
+              every page and replaces the built-in chat bubble. Leave empty to
+              keep the built-in chat, which emails you every message.)
+            </span>
+            <textarea
+              name="livechatEmbed"
+              defaultValue={s.livechatEmbed}
+              rows={5}
+              placeholder="<script>…tawk.to…</script>"
+              className={`${input} mt-1.5 font-mono text-[12px]`}
             />
           </label>
         </section>

@@ -157,11 +157,17 @@ export function orderCustomerHtml(order: Order, settings: SiteSettings): string 
   );
 }
 
-export function orderOwnerHtml(order: Order): string {
+export function orderOwnerHtml(order: Order, persisted = true): string {
   const c = order.customer;
+  const dbWarning = persisted
+    ? ""
+    : `<div style="background:#fdecea;border:1px solid #f5b5ae;border-radius:8px;padding:12px 14px;margin-bottom:14px;">
+         <p style="margin:0;font-size:13.5px;color:#a3231a;"><b>&#9888;&#65039; This order did not save to the database.</b><br>
+         Everything you need is in this email — keep it. Check <b>/api/health</b> on the site to see what is wrong (usually the database schema has not been set up yet).</p>
+       </div>`;
   return shell(
     `New order ${order.id} — ${usd(order.total)}`,
-    `<p style="font-size:14px;"><b>${c.name}</b> placed an order (${order.paymentMode} mode, method: ${methodLabel(order)}${order.paymentReference ? `, ref: ${order.paymentReference}` : ""}).</p>
+    `${dbWarning}<p style="font-size:14px;"><b>${c.name}</b> placed an order (${order.paymentMode} mode, method: ${methodLabel(order)}${order.paymentReference ? `, ref: ${order.paymentReference}` : ""}).</p>
      ${itemsTable(order)}
      <p style="font-size:13.5px;margin-top:14px;">
        <b>Contact:</b> ${c.email} &middot; ${c.phone}<br>

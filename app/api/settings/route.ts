@@ -6,7 +6,7 @@ import { getSettings } from "@/lib/settings";
 export async function GET() {
   const s = await getSettings();
   return NextResponse.json(
-    { whatsapp: s.whatsapp, socials: s.socials },
+    { whatsapp: s.whatsapp, socials: s.socials, livechatEmbed: s.livechatEmbed },
     { headers: { "Cache-Control": "public, max-age=60, stale-while-revalidate=300" } }
   );
 }
