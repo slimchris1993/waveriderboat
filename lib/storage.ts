@@ -157,15 +157,38 @@ export async function hashSet(hash: string, field: string, value: unknown): Prom
   fsWrite(hash, map);
 }
 
-/** Cheap round-trip used by /api/health to prove the table is reachable. */
-export async function storagePing(): Promise<{ ok: boolean; error?: string }> {
-  if (!useSupabase()) return { ok: true };
-  try {
-    const db = await supabase();
-    const { error } = await db.from(TABLE).select("key", { head: true, count: "exact" }).limit(1);
-    if (error) throw error;
-    return { ok: true };
-  } catch (e) {
-    return { ok: false, error: (e as { message?: string })?.message ?? String(e) };
-  }
+/**
+ * Read+write round-trip used by /api/health. A plain select is used rather
+ * than a HEAD/count request, because PostgREST returns an empty error body
+ * for HEAD requests — which reports as a failure with no explanation.
+ */
+export async function storagePing(): Promise<{
+  ok: boolean;
+  canRead: boolean;
+  canWrite: boolean;
+  error?: string;
+}> {
+  if (!useSupabase()) return { ok: true, canRead: true, canWrite: true };
+  const db = await supabase();
+  let canRead = false;
+  let canWrite = false;
+  let error: string | undefined;
+
+  const read = await db.from(TABLE).select("key").limit(1);
+  if (read.error) error = `read: ${read.error.message || read.error.code || "unknown"}`;
+  else canRead = true;
+
+  const write = await db
+    .from(TABLE)
+    .upsert(
+      { bucket: "health", key: "ping", value: { at: new Date().toISOString() } },
+      { onConflict: "bucket,key" }
+    );
+  if (write.error) {
+    error = [error, `write: ${write.error.message || write.error.code || "unknown"}`]
+      .filter(Boolean)
+      .join(" | ");
+  } else canWrite = true;
+
+  return { ok: canRead && canWrite, canRead, canWrite, error };
 }

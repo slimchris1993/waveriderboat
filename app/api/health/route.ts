@@ -14,6 +14,8 @@ export async function GET() {
     storage: {
       ...status,
       tableReachable: ping.ok,
+      canRead: ping.canRead,
+      canWrite: ping.canWrite,
       error: ping.error,
       hint: ping.ok
         ? undefined
