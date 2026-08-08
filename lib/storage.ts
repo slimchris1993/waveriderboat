@@ -38,10 +38,15 @@ const KV_BUCKET = "kv";
 /** Last storage error, surfaced by /api/health so misconfig is diagnosable. */
 let lastError: string | null = null;
 export function storageStatus() {
+  const key = supabaseKey();
   return {
     driver: useSupabase() ? "supabase" : "file",
     supabaseUrlSet: !!process.env.SUPABASE_URL,
-    supabaseKeySet: !!supabaseKey(),
+    supabaseKeySet: !!key,
+    // Prefix only — enough to tell a publishable key from a secret one, or
+    // spot stray quotes/whitespace, without exposing the key itself.
+    keyPrefix: key ? key.slice(0, 11) + "…(" + key.length + " chars)" : "(none)",
+    keyLooksPublishable: key.startsWith("sb_publishable_") || key.startsWith("eyJ"),
     keyKind: process.env.SUPABASE_SECRET_KEY
       ? "secret"
       : process.env.SUPABASE_SERVICE_ROLE_KEY
