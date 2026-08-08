@@ -1,0 +1,261 @@
+[
+ {
+  "id": "black-rider-g2",
+  "name": "G2 Bolt",
+  "cat": "Electric Surfboard",
+  "price": 2132,
+  "image": "/images/20250117165455.webp"
+ },
+ {
+  "id": "donut-bbq-boat",
+  "name": "Donut BBQ Boat",
+  "cat": "Partner Collection",
+  "price": 2000,
+  "image": "/images/new donut barbecue to add3.webp"
+ },
+ {
+  "id": "efi-02",
+  "name": "Raptor EFI 02",
+  "cat": "Gas Surfboard",
+  "price": 2440,
+  "image": "/images/8.webp"
+ },
+ {
+  "id": "efi-03",
+  "name": "Raptor EFI 03",
+  "cat": "Gas Surfboard",
+  "price": 2600,
+  "image": "/images/340bf129-c410-498b-a139-7cf5974ba638.webp"
+ },
+ {
+  "id": "fighter-f0",
+  "name": "F0 Sport",
+  "cat": "Electric Surfboard",
+  "price": 3820,
+  "image": "/images/DSC5244.webp"
+ },
+ {
+  "id": "fighter-f2",
+  "name": "F2 Apex",
+  "cat": "Electric Surfboard",
+  "price": 5592,
+  "image": "/images/2222.webp"
+ },
+ {
+  "id": "kart-boat",
+  "name": "Electric Kart Boat",
+  "cat": "Partner Collection",
+  "price": 1500,
+  "image": "/images/kart-boatd05b1.webp"
+ },
+ {
+  "id": "mini-electric-jet-boat",
+  "name": "Mini Electric Jet Boat",
+  "cat": "Electric Boat",
+  "price": 5000,
+  "image": "/images/minijet-hero.webp"
+ },
+ {
+  "id": "rider-h1",
+  "name": "H1 Glide",
+  "cat": "Electric Surfboard",
+  "price": 1520,
+  "image": "/images/h1-hero-surf.webp"
+ },
+ {
+  "id": "rider-plus-g3",
+  "name": "G3 Cruise",
+  "cat": "Electric Surfboard",
+  "price": 2480,
+  "image": "/images/3034a1133efe01daba919094b70c6310.webp"
+ },
+ {
+  "id": "supercar-bumper",
+  "name": "Supercar Bumper Boat",
+  "cat": "Partner Collection",
+  "price": 2500,
+  "image": "/images/waterborne-supercar-bumper-boat06da7.webp"
+ },
+ {
+  "id": "surf-boat-set",
+  "name": "Surf Boat Accessory Set",
+  "cat": "Accessory",
+  "price": 320,
+  "image": "/images/01941c42df1dc2db1e125791b28366b9.webp"
+ },
+ {
+  "id": "swan-pedal-boat",
+  "name": "Little Swan Pedal Boat",
+  "cat": "Partner Collection",
+  "price": 700,
+  "image": "/images/little-swan-pedal-boatbf423.webp"
+ },
+ {
+  "id": "v1-boat",
+  "name": "V1 Go Kart Boat",
+  "cat": "Electric Boat",
+  "price": 3196,
+  "image": "/images/3034a1133efe01daba919094b70c6310_edc7be8a-93ea-4a88-a2fb-68a90a29b449.webp"
+ },
+ {
+  "id": "v1-mini-jet",
+  "name": "V1 Mini Jet Boat",
+  "cat": "Electric Boat",
+  "price": 1000,
+  "image": "/images/v1-mini-jet-gallery1.webp"
+ },
+ {
+  "id": "wr-gp-ho",
+  "name": "Yamaha GP HO",
+  "cat": "Jet Ski",
+  "price": 13500,
+  "image": "/images/FX-HO.webp"
+ },
+ {
+  "id": "wr-gp-svho",
+  "name": "Yamaha GP SVHO",
+  "cat": "Jet Ski",
+  "price": 15000,
+  "image": "/images/GP1800R-SVHO.webp"
+ },
+ {
+  "id": "wr-jb-dlx",
+  "name": "Yamaha JetBlaster DLX",
+  "cat": "Jet Ski",
+  "price": 8800,
+  "image": "/images/gallery2.webp"
+ },
+ {
+  "id": "wr-jb-pro",
+  "name": "Yamaha JetBlaster Pro",
+  "cat": "Jet Ski",
+  "price": 9500,
+  "image": "/images/gallery3.webp"
+ },
+ {
+  "id": "wr-jetblaster",
+  "name": "Yamaha JetBlaster",
+  "cat": "Jet Ski",
+  "price": 8000,
+  "image": "/images/gallery1.webp"
+ },
+ {
+  "id": "wr-vx",
+  "name": "Yamaha VX",
+  "cat": "Jet Ski",
+  "price": 10500,
+  "image": "/images/gallery4.webp"
+ },
+ {
+  "id": "wr-vx-c",
+  "name": "Yamaha VX-C",
+  "cat": "Jet Ski",
+  "price": 9800,
+  "image": "/images/VX-C.webp"
+ },
+ {
+  "id": "wr-vx-cr",
+  "name": "Yamaha VX Cruiser",
+  "cat": "Jet Ski",
+  "price": 11800,
+  "image": "/images/VX-Cruiser.webp"
+ },
+ {
+  "id": "wr-vx-crho",
+  "name": "Yamaha VX Cruiser HO",
+  "cat": "Jet Ski",
+  "price": 12800,
+  "image": "/images/FX-Cruiser-HO.webp"
+ },
+ {
+  "id": "wr-vx-dlx",
+  "name": "Yamaha VX Deluxe",
+  "cat": "Jet Ski",
+  "price": 11200,
+  "image": "/images/EX-Deluxe.webp"
+ },
+ {
+  "id": "y1-carbon",
+  "name": "Y1 Carbon E-Foil",
+  "cat": "E-Foil",
+  "price": 2200,
+  "image": "/images/LJF05152.webp"
+ },
+ {
+  "id": "y1-epp",
+  "name": "Y1 EPP E-Foil",
+  "cat": "E-Foil",
+  "price": 1800,
+  "image": "/images/20250627103950.webp"
+ },
+ {
+  "id": "zar-49-bf100",
+  "name": "ZAR 49 Sport Luxury + Honda BF100",
+  "cat": "RIB Boat",
+  "price": 60850,
+  "image": "/images/zar-49-1.jpg"
+ },
+ {
+  "id": "zar-49-bf60",
+  "name": "ZAR 49 Sport Luxury + Honda BF60",
+  "cat": "RIB Boat",
+  "price": 57650,
+  "image": "/images/zar-49-1.jpg"
+ },
+ {
+  "id": "zar-49-bf80",
+  "name": "ZAR 49 Sport Luxury + Honda BF80",
+  "cat": "RIB Boat",
+  "price": 59550,
+  "image": "/images/zar-49-1.jpg"
+ },
+ {
+  "id": "zar-lux13-bf30",
+  "name": "ZAR Mini LUX 13 + Honda BF30",
+  "cat": "RIB Boat",
+  "price": 15400,
+  "image": "/images/zar-lux13-3.jpg"
+ },
+ {
+  "id": "zar-lux13-bf40",
+  "name": "ZAR Mini LUX 13 + Honda BF40",
+  "cat": "RIB Boat",
+  "price": 17150,
+  "image": "/images/zar-lux13-3.jpg"
+ },
+ {
+  "id": "zar-lux13-bf50",
+  "name": "ZAR Mini LUX 13 + Honda BF50",
+  "cat": "RIB Boat",
+  "price": 18650,
+  "image": "/images/zar-lux13-3.jpg"
+ },
+ {
+  "id": "zar-lux14-bf30",
+  "name": "ZAR Mini LUX 14 + Honda BF30",
+  "cat": "RIB Boat",
+  "price": 21200,
+  "image": "/images/zar-lux14-2.jpg"
+ },
+ {
+  "id": "zar-lux14-bf40",
+  "name": "ZAR Mini LUX 14 + Honda BF40",
+  "cat": "RIB Boat",
+  "price": 22950,
+  "image": "/images/zar-lux14-2.jpg"
+ },
+ {
+  "id": "zar-lux14-bf50",
+  "name": "ZAR Mini LUX 14 + Honda BF50",
+  "cat": "RIB Boat",
+  "price": 24100,
+  "image": "/images/zar-lux14-2.jpg"
+ },
+ {
+  "id": "zar-lux14-bf60",
+  "name": "ZAR Mini LUX 14 + Honda BF60",
+  "cat": "RIB Boat",
+  "price": 25550,
+  "image": "/images/zar-lux14-2.jpg"
+ }
+]

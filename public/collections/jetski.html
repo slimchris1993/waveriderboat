@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jet Ski — Yamaha WaveRunner — WAVERIDER</title>
+<meta name="description" content="Shop Yamaha WaveRunner personal watercraft at WAVERIDER. 10 models from $8,000. JetBlaster, VX Series, GP Series. 5 global warehouses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="/js/cart.js"></script>
+<script src="/js/site-config.js" defer></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;max-width:100vw}
+body{background:#0d0906;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;padding-top:102px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:root{--o:#0d0906;--b:#ff7d1f;--bd:rgba(255,125,31,.10);--bg:rgba(255,125,31,.25);--w:#fff;--off:#e6dccd;--m:#8d7c67;--c:#16100a;--br:rgba(255,125,31,.12)}
+.ann{position:fixed;top:0;z-index:201;width:100%;height:38px;background:var(--b);display:flex;align-items:center;overflow:hidden}
+.ann-t{display:flex;white-space:nowrap;animation:ticker 32s linear infinite}
+.ann-t span{font-size:11px;font-weight:700;letter-spacing:.1em;color:#0d0906;text-transform:uppercase;padding:0 48px}
+.ann-t span::before{content:'\26A1';margin-right:10px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.nav{position:fixed;top:38px;z-index:100;width:100%;height:64px;background:rgba(13,9,6,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--br);display:flex;align-items:center;padding:0 48px;gap:32px}
+.nav-logo{font-family:'Anton',sans-serif;font-size:26px;letter-spacing:.06em;flex-shrink:0}
+.nav-logo em{font-style:normal;color:var(--b)}
+.nav-links{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}
+.ni{position:relative}
+.ni>a,.ni>button{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--off);padding:8px 14px;border-radius:6px;transition:color .2s,background .2s;display:flex;align-items:center;gap:5px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+.ni>a:hover,.ni>button:hover,.ni>a.cur{color:var(--b);background:var(--bd)}
+.chev{width:9px;height:9px;transition:transform .25s}
+.ni.open .chev{transform:rotate(180deg)}
+.drop{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:#191209;border:1px solid var(--br);border-radius:14px;padding:14px;display:grid;grid-template-columns:repeat(2,158px);gap:6px;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;box-shadow:0 28px 72px rgba(0,0,0,.7);min-width:330px}
+.ni.open .drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.di{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;transition:background .2s}
+.di:hover{background:var(--bd)}
+.dt{width:42px;height:34px;border-radius:6px;object-fit:cover;background:#111;flex-shrink:0}
+.dn{font-size:12px;font-weight:600;color:var(--off);line-height:1.3}
+.cart-lnk{position:relative;flex-shrink:0;display:flex;align-items:center;gap:6px;color:var(--off);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:6px;transition:color .2s}
+.cart-lnk:hover{color:var(--b)}
+.mob-menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none;flex-shrink:0}
+.mob-menu span{display:block;width:22px;height:2px;background:var(--off);border-radius:2px;transition:transform .3s,opacity .3s}
+.mob-menu.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mob-menu.open span:nth-child(2){opacity:0}
+.mob-menu.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-drawer{display:none;position:fixed;inset:0;top:102px;background:rgba(13,9,6,.98);backdrop-filter:blur(20px);z-index:99;overflow-y:auto;padding:24px 20px 40px;flex-direction:column;gap:6px}
+.mob-drawer.open{display:flex}
+.mob-section{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--m);margin:16px 0 8px}
+.mob-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;color:var(--off);font-size:14px;font-weight:600;transition:background .2s,color .2s}
+.mob-link:hover{background:var(--bd);color:var(--b)}
+.mob-link img{width:38px;height:30px;border-radius:5px;object-fit:cover;flex-shrink:0}
+.mob-wa{background:#25D366;color:#fff;font-size:14px;font-weight:700;padding:14px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px}
+.hero{height:55vh;min-height:400px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('../images/WaveRunner-Family-Photo.webp') center/cover no-repeat}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,9,6,1) 0%,rgba(13,9,6,.5) 45%,rgba(13,9,6,.1) 100%)}
+.hero-c{position:relative;z-index:2;padding:0 80px 52px}
+.hero-eye{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--b);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.hero-eye::before{content:'';width:24px;height:1px;background:var(--b)}
+.hero-h{font-family:'Anton',sans-serif;font-size:clamp(48px,7vw,90px);line-height:.9;letter-spacing:.02em;margin-bottom:10px}
+.hero-sub{font-size:15px;color:var(--off);max-width:480px;line-height:1.6}
+.bc{padding:16px 80px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--m);border-bottom:1px solid var(--br)}
+.bc a:hover{color:var(--b)}
+.col-body{padding:56px 80px 100px;max-width:1400px;margin:0 auto}
+/* Single card for WaveRunner */
+.wr-card{background:var(--c);border:1px solid var(--br);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:0;transition:border-color .3s}
+.wr-card:hover{border-color:rgba(255,125,31,.4)}
+.wr-img{position:relative;overflow:hidden}
+.wr-img img{width:100%;height:100%;object-fit:cover;min-height:400px;transition:transform .5s}
+.wr-card:hover .wr-img img{transform:scale(1.04)}
+.wr-badge{position:absolute;top:16px;left:16px;background:rgba(255,125,31,.15);border:1px solid var(--b);color:var(--b);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:20px;backdrop-filter:blur(8px)}
+.wr-body{padding:40px}
+.wr-eye{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--b);margin-bottom:10px}
+.wr-name{font-family:'Anton',sans-serif;font-size:52px;letter-spacing:.02em;margin-bottom:8px;line-height:1}
+.wr-tag{font-size:14px;color:var(--m);font-style:italic;margin-bottom:16px}
+.wr-desc{font-size:14px;color:var(--off);line-height:1.75;margin-bottom:24px}
+.wr-models{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.wr-model-row{display:flex;justify-content:space-between;align-items:center;background:var(--o);border:1px solid var(--br);border-radius:8px;padding:10px 16px;font-size:13px}
+.wr-model-name{color:var(--off);font-weight:600}
+.wr-model-price{color:var(--b);font-weight:700;font-family:'Anton',sans-serif;font-size:18px;letter-spacing:.03em}
+.wr-price-range{font-family:'Anton',sans-serif;font-size:32px;color:var(--b);letter-spacing:.02em;margin-bottom:20px}
+.wr-cta{background:var(--b);color:var(--o);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:15px 28px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;transition:box-shadow .2s,transform .2s;box-shadow:0 0 24px var(--bg)}
+.wr-cta:hover{transform:translateY(-1px);box-shadow:0 0 40px var(--bg)}
+footer{padding:40px 80px;border-top:1px solid var(--br);display:flex;align-items:center;justify-content:space-between}
+footer .fl{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.06em}
+footer .fl em{color:var(--b);font-style:normal}
+footer p{font-size:12px;color:var(--m)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.vis{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.wr-card{grid-template-columns:1fr}.wr-img img{min-height:280px}}
+@media(max-width:768px){.mob-menu{display:flex!important}.nav-links{display:none!important}.nav{padding:0 16px;gap:4px}.hero-c,.bc,.col-body,footer{padding-left:16px!important;padding-right:16px!important}}
+</style>
+</head>
+<body>
+
+<div class="ann"><div class="ann-t"><span>EU &mdash; Poland</span><span>USA &mdash; Los Angeles</span><span>UK &mdash; United Kingdom</span><span>AU &mdash; Queensland</span><span>CN &mdash; Shenzhen</span><span>Free shipping on orders over $5,000</span><span>EU &mdash; Poland</span><span>USA &mdash; Los Angeles</span><span>UK &mdash; United Kingdom</span><span>AU &mdash; Queensland</span><span>CN &mdash; Shenzhen</span><span>Free shipping on orders over $5,000</span></div></div>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">WAVE<em>RIDER</em></a>
+  <div class="nav-links">
+    <div class="ni"><button>Electric <svg class="chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="drop">
+        <a href="../products/rider-h1.html" class="di"><img class="dt" src="/images/h1-hero-surf.webp" alt=""><span class="dn">H1 Glide</span></a>
+        <a href="../products/g2.html" class="di"><img class="dt" src="/images/20250117165455.webp" alt=""><span class="dn">G2 Bolt</span></a>
+        <a href="../products/g3.html" class="di"><img class="dt" src="/images/3034a1133efe01daba919094b70c6310.webp" alt=""><span class="dn">G3 Cruise</span></a>
+        <a href="../products/f0.html" class="di"><img class="dt" src="/images/DSC5244.webp" alt=""><span class="dn">F0 Sport</span></a>
+        <a href="../products/f2.html" class="di"><img class="dt" src="/images/DSC5233.webp" alt=""><span class="dn">F2 Apex</span></a>
+      </div>
+    </div>
+    <div class="ni"><button>E-Foil <svg class="chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="drop" style="grid-template-columns:1fr;min-width:200px">
+        <a href="../products/y1-carbon.html" class="di"><img class="dt" src="/images/LJF05152.webp" alt=""><span class="dn">Y1 Carbon</span></a>
+        <a href="../products/y1-epp.html" class="di"><img class="dt" src="/images/20250627103950.webp" alt=""><span class="dn">Y1 EPP</span></a>
+      </div>
+    </div>
+    <div class="ni"><button>Boats <svg class="chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="drop">
+        <a href="../products/v1-boat.html" class="di"><img class="dt" src="/images/3034a1133efe01daba919094b70c6310_edc7be8a-93ea-4a88-a2fb-68a90a29b449.webp" alt=""><span class="dn">V1 Electric Boat</span></a>
+        <a href="../products/v1-mini-jet-boat.html" class="di"><img class="dt" src="/images/v1-mini-jet-gallery1.webp" alt=""><span class="dn">V1 Mini Jet Boat</span></a>
+        <a href="../products/mini-electric-jet-boat.html" class="di"><img class="dt" src="/images/MiniJet.webp" alt=""><span class="dn">Mini Electric Jet Boat</span></a>
+        <a href="../products/zar-mini-lux-13.html" class="di"><img class="dt" src="/images/zar-lux13-3.jpg" alt=""><span class="dn">ZAR Mini LUX 13</span></a>
+        <a href="../products/zar-mini-lux-14.html" class="di"><img class="dt" src="/images/zar-lux14-2.jpg" alt=""><span class="dn">ZAR Mini LUX 14</span></a>
+        <a href="../products/zar-49-sport-luxury.html" class="di"><img class="dt" src="/images/zar-49-1.jpg" alt=""><span class="dn">ZAR 49 Sport</span></a>
+        <a href="../products/donut-bbq-boat.html" class="di"><img class="dt" src="/images/new donut barbecue to add3.webp" alt=""><span class="dn">Donut BBQ Boat</span></a>
+        <a href="../products/kart-boat.html" class="di"><img class="dt" src="/images/kart-boatd05b1.webp" alt=""><span class="dn">Electric Kart Boat</span></a>
+        <a href="../products/supercar-bumper-boat.html" class="di"><img class="dt" src="/images/waterborne-supercar-bumper-boat06da7.webp" alt=""><span class="dn">Supercar Bumper</span></a>
+        <a href="../products/swan-pedal-boat.html" class="di"><img class="dt" src="/images/little-swan-pedal-boatbf423.webp" alt=""><span class="dn">Little Swan Pedal</span></a>
+      </div>
+    </div>
+    <div class="ni"><button>Gas <svg class="chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="drop" style="grid-template-columns:1fr;min-width:220px">
+        <a href="../products/raptor-efi-02.html" class="di"><img class="dt" src="/images/8.webp" alt=""><span class="dn">Raptor EFI 02</span></a>
+        <a href="../products/raptor-efi-03.html" class="di"><img class="dt" src="/images/340bf129-c410-498b-a139-7cf5974ba638.webp" alt=""><span class="dn">Raptor EFI 03</span></a>
+      </div>
+    </div>
+    <div class="ni"><button class="cur">Jet Ski <svg class="chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="drop" style="grid-template-columns:1fr;min-width:220px">
+        <a href="../products/waverunner.html" class="di"><img class="dt" src="/images/All-WaveRunner-Series.webp" alt=""><span class="dn">Yamaha WaveRunner</span></a>
+      </div>
+    </div>
+    <div class="ni"><a href="accessories.html">Accessories</a></div>
+  </div>
+  <a href="/cart.html" class="cart-lnk">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+    Cart
+    <span id="cartBadge" style="display:none;position:absolute;top:4px;right:4px;background:#ff7d1f;color:#0d0906;font-size:9px;font-weight:900;width:16px;height:16px;border-radius:50%;align-items:center;justify-content:center;line-height:1">0</span>
+  </a>
+  <button class="mob-menu" id="mobBtn" onclick="toggleMob(event)" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-section">Jet Ski</div>
+  <a href="../products/waverunner.html" class="mob-link" onclick="closeMob()"><img src="/images/All-WaveRunner-Series.webp" alt="">Yamaha WaveRunner</a>
+  <div class="mob-section">Electric Surfboards</div>
+  <a href="../products/rider-h1.html" class="mob-link" onclick="closeMob()"><img src="/images/h1-hero-surf.webp" alt="">H1 Glide</a>
+  <a href="../products/g2.html" class="mob-link" onclick="closeMob()"><img src="/images/20250117165455.webp" alt="">G2 Bolt</a>
+  <div class="mob-section">Boats &amp; RIBs</div>
+  <a href="../products/zar-mini-lux-13.html" class="mob-link" onclick="closeMob()"><img src="/images/zar-lux13-3.jpg" alt="">ZAR Mini LUX 13</a>
+  <a href="../products/zar-mini-lux-14.html" class="mob-link" onclick="closeMob()"><img src="/images/zar-lux14-2.jpg" alt="">ZAR Mini LUX 14</a>
+  <a href="../products/zar-49-sport-luxury.html" class="mob-link" onclick="closeMob()"><img src="/images/zar-49-1.jpg" alt="">ZAR 49 Sport</a>
+  <a href="boats.html" class="mob-link" onclick="closeMob()">All Boats &#8594;</a>
+  <a href="/cart.html" class="mob-link" onclick="closeMob()">View Cart</a>
+  <a href="https://wa.me/18312964971" target="_blank" class="mob-wa">WhatsApp Us</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-c">
+    <div class="hero-eye">Yamaha &middot; 2025 Lineup</div>
+    <h1 class="hero-h">JET SKI</h1>
+    <p class="hero-sub">Ten WaveRunner models. Three series. One Yamaha standard. From $8,000 to $15,000.</p>
+  </div>
+</section>
+
+<div class="bc"><a href="../index.html">Home</a><span style="font-size:10px">&rsaquo;</span><span style="color:#fff">Jet Ski</span></div>
+
+<div class="col-body">
+  <div class="wr-card rv">
+    <div class="wr-img">
+      <img src="/images/All-WaveRunner-Series.webp" alt="Yamaha WaveRunner Lineup">
+      <div class="wr-badge">10 Models Available</div>
+    </div>
+    <div class="wr-body">
+      <div class="wr-eye">Yamaha Personal Watercraft &middot; 2025</div>
+      <div class="wr-name">YAMAHA WAVE RUNNER</div>
+      <div class="wr-tag">Born on open water. Built for the rider who doesn&rsquo;t slow down.</div>
+      <p class="wr-desc">Three series. Ten models. Every level of rider covered from the lightweight JetBlaster to the 250HP GP SVHO supercharged race machine. NanoXcel&reg; hulls, RiDE&reg; dual throttle, Connext&reg; infotainment, Yamaha Audio — all the technology, all five series, one lineup.</p>
+      <div class="wr-models">
+        <div class="wr-model-row"><span class="wr-model-name">JetBlaster</span><span class="wr-model-price">$8,000</span></div>
+        <div class="wr-model-row"><span class="wr-model-name">JetBlaster DLX</span><span class="wr-model-price">$8,800</span></div>
+        <div class="wr-model-row"><span class="wr-model-name">JetBlaster Pro</span><span class="wr-model-price">$9,500</span></div>
+        <div class="wr-model-row"><span class="wr-model-name">VX-C / VX / VX Deluxe / VX Cruiser</span><span class="wr-model-price">$9,800+</span></div>
+        <div class="wr-model-row"><span class="wr-model-name">GP HO &mdash; 200HP</span><span class="wr-model-price">$13,500</span></div>
+        <div class="wr-model-row"><span class="wr-model-name">GP SVHO &mdash; 250HP Supercharged</span><span class="wr-model-price">$15,000</span></div>
+      </div>
+      <div class="wr-price-range">From $8,000</div>
+      <a href="../products/waverunner.html" class="wr-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        View All 10 Models
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer><div class="fl">WAVE<em>RIDER</em></div><p>&copy; 2025 WAVERIDER &mdash; waveriderboat.com</p></footer>
+
+<script>
+(function(){
+  var nis=document.querySelectorAll('.ni');
+  nis.forEach(function(ni){var btn=ni.querySelector('button');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var o=ni.classList.contains('open');nis.forEach(function(x){x.classList.remove('open');});if(!o)ni.classList.add('open');});});
+  document.addEventListener('click',function(e){if(e.target.closest('#mobBtn')||e.target.closest('#mobDrawer'))return;nis.forEach(function(x){x.classList.remove('open');});});
+})();
+function toggleMob(e){if(e)e.stopPropagation();document.getElementById('mobBtn').classList.toggle('open');document.getElementById('mobDrawer').classList.toggle('open');}
+function closeMob(){document.getElementById('mobBtn').classList.remove('open');document.getElementById('mobDrawer').classList.remove('open');}
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target);}});},{threshold:0.06});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>

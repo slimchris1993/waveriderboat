@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAVERIDER — Electric Surfboards, E-Foils & Boats</title>
+<meta name="description" content="WAVERIDER performance watercraft. Electric surfboards up to 75KM/H. E-Foils. Electric boats. 5 Global Warehouses.">
+<meta property="og:title" content="WAVERIDER — Ride at 75KM/H">
+<meta property="og:image" content="https://waveriderboat.com/images/20260408155905_192_38.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after{box-sizing:border-box}
+html{overflow-x:hidden;max-width:100vw}
+body{padding-top:102px;overflow-x:hidden;max-width:100vw;width:100%}
+
+:root{--ocean:#0d0906;--blue:#ff7d1f;--blue-dim:rgba(255,125,31,.10);--blue-glow:rgba(255,125,31,.32);--white:#fff;--off:#e6dccd;--muted:#8d7c67;--card:#16100a;--border:rgba(255,125,31,.12);--fd:'Anton',sans-serif;--fb:'Inter',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ocean);color:var(--white);font-family:var(--fb);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{cursor:pointer;border:none;background:none;font-family:var(--fb)}
+
+/* ANNOUNCE */
+.ann{position:fixed;top:0;z-index:201;height:38px;background:var(--blue,#ff7d1f);display:flex;align-items:center;overflow:hidden}
+.ann-t{display:flex;white-space:nowrap;animation:ticker 32s linear infinite}
+.ann-t span{font-size:11px;font-weight:700;letter-spacing:.1em;color:#0d0906;text-transform:uppercase;padding:0 48px}
+.ann-t span::before{content:'⚡';margin-right:10px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
+.nav{position:fixed;top:38px;z-index:100;height:64px;background:rgba(13,9,6,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 48px;gap:32px}
+.nav-logo{font-family:var(--fd);font-size:26px;letter-spacing:.06em;flex-shrink:0}
+.nav-logo em{font-style:normal;color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:2px;flex:1;justify-content:center}
+.nav-item{position:relative}
+.nav-item>a,.nav-item>button{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--off);padding:8px 14px;border-radius:6px;transition:color .2s,background .2s;display:flex;align-items:center;gap:5px}
+.nav-item>a:hover,.nav-item>button:hover{color:var(--blue);background:var(--blue-dim)}
+.nav-chev{width:9px;height:9px;transition:transform .25s}
+.nav-item.open .nav-chev{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:#191209;border:1px solid var(--border);border-radius:14px;padding:14px;display:grid;grid-template-columns:repeat(2,158px);gap:6px;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;box-shadow:0 28px 72px rgba(0,0,0,.7);min-width:330px}
+.nav-item.open .nav-drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.nav-di{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;transition:background .2s}
+.nav-di:hover{background:var(--blue-dim)}
+.nav-dt{width:42px;height:34px;border-radius:6px;object-fit:cover;background:#111;flex-shrink:0}
+.nav-dn{font-size:12px;font-weight:600;color:var(--off);line-height:1.3}
+.nav-wa{flex-shrink:0;background:#25D366;color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 20px;border-radius:8px;display:flex;align-items:center;gap:8px;transition:opacity .2s,transform .2s}
+.nav-wa:hover{opacity:.88;transform:translateY(-1px)}
+.nav-wa svg{width:15px;height:15px}
+
+/* HERO */
+.hero{max-width:100%;position:relative;height:100vh;min-height:680px;display:flex;align-items:flex-end;overflow:hidden}
+.h-slides{position:absolute;inset:0}
+.h-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease-in-out;filter:saturate(.78) brightness(.9) contrast(1.04)}
+.h-slide.active{opacity:1}
+.h-ov{position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,9,6,.92) 0%,rgba(13,9,6,.6) 42%,rgba(13,9,6,.16) 75%,rgba(13,9,6,.05) 100%),linear-gradient(to top,rgba(13,9,6,.97) 0%,rgba(13,9,6,.32) 48%,rgba(13,9,6,.22) 100%),radial-gradient(ellipse at 12% 88%,rgba(255,125,31,.15),transparent 55%)}
+.h-content{position:relative;z-index:2;padding:0 80px 88px;max-width:860px}
+.h-eye{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;opacity:0;animation:fadeUp .7s .3s ease forwards}
+.h-eye::before{content:'';width:28px;height:1px;background:var(--blue)}
+.h-h1{font-family:var(--fd);font-size:clamp(72px,10.5vw,152px);line-height:.9;letter-spacing:.02em;margin-bottom:20px;opacity:0;animation:fadeUp .7s .5s ease forwards;text-shadow:0 4px 44px rgba(0,0,0,.6)}
+.h-h1 em{font-style:normal;color:var(--blue);display:block}
+.h-sub{font-size:17px;color:var(--off);line-height:1.65;margin-bottom:44px;max-width:420px;opacity:0;animation:fadeUp .7s .7s ease forwards}
+.h-ctas{display:flex;gap:14px;opacity:0;animation:fadeUp .7s .9s ease forwards}
+.btn-p{background:var(--blue);color:var(--ocean);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:15px 36px;border-radius:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 0 28px var(--blue-glow)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 44px var(--blue-glow)}
+.btn-o{border:1px solid rgba(255,255,255,.25);color:var(--white);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:15px 36px;border-radius:8px;transition:border-color .2s,background .2s}
+.btn-o:hover{border-color:var(--blue);background:var(--blue-dim)}
+.h-dots{position:absolute;left:80px;bottom:36px;display:flex;gap:8px;z-index:3}
+.h-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.22);transition:background .3s,transform .3s;cursor:pointer}
+.h-dot.active{background:var(--blue);transform:scale(1.4)}
+
+/* STATS */
+.stats{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 80px;display:grid;grid-template-columns:repeat(5,1fr)}
+.stat{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:var(--fd);font-size:50px;line-height:1;color:var(--blue);letter-spacing:.02em}
+.stat-u{font-family:var(--fd);font-size:24px;color:var(--blue)}
+.stat-l{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+
+/* FEEL */
+.feel{padding:96px 0;overflow:hidden}
+.feel-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;height:580px}
+.fp{position:relative;overflow:hidden}
+.fp img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.fp:hover img{transform:scale(1.05)}
+.fp-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,9,6,.88) 0%,transparent 55%);display:flex;align-items:flex-end;padding:26px}
+.fp-label{font-family:var(--fd);font-size:30px;letter-spacing:.04em;line-height:1}
+.fp-sub{font-size:12px;color:var(--off);margin-top:5px}
+.feel-stmt{text-align:center;padding:64px 80px 0}
+.feel-stmt h2{font-family:var(--fd);font-size:clamp(48px,6vw,88px);line-height:.93;letter-spacing:.02em;max-width:860px;margin:0 auto 22px}
+.feel-stmt h2 em{font-style:normal;color:var(--blue)}
+.feel-stmt p{font-size:16px;color:var(--off);max-width:540px;margin:0 auto;line-height:1.75}
+
+/* ATOMS */
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.eyebrow::after{content:'';flex:0 0 32px;height:1px;background:var(--blue)}
+.sec-h{font-family:var(--fd);font-size:clamp(40px,5vw,70px);line-height:.93;letter-spacing:.02em;margin-bottom:10px}
+.sec-d{font-size:15px;color:var(--off);max-width:500px;line-height:1.75}
+
+/* FEATURED */
+.featured{padding:100px 80px}
+.feat-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px}
+.see-all{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:8px;transition:gap .2s}
+.see-all:hover{gap:14px}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.fc{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--border);transition:border-color .3s,transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+.fc:hover{border-color:rgba(255,125,31,.45);transform:translateY(-5px);box-shadow:0 20px 60px rgba(255,125,31,.1)}
+.fc-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#120d08}
+.fc-img img{width:100%;height:100%;object-fit:cover;transition:opacity .55s}
+.fc-img .alt{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .55s}
+.fc:hover .fc-img img{opacity:0}
+.fc:hover .fc-img .alt{opacity:1}
+.fc-pill{position:absolute;top:14px;left:14px;background:rgba(13,9,6,.8);backdrop-filter:blur(8px);border:1px solid var(--border);color:var(--blue);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:20px}
+.fc-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.fc-name{font-family:var(--fd);font-size:30px;letter-spacing:.03em;line-height:1;margin-bottom:10px}
+.fc-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px;flex:1}
+.fc-stats{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.fc-stat{background:var(--blue-dim);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:11px;font-weight:600;color:var(--blue)}
+.fc-link{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);display:flex;align-items:center;gap:8px;transition:gap .2s,color .2s}
+.fc:hover .fc-link{color:var(--blue);gap:14px}
+
+/* FLAGSHIP FULL BLEED */
+.flagship{overflow:hidden}
+.fs-bg{position:relative;height:88vh;min-height:600px;display:flex;align-items:center}
+.fs-img{position:absolute;inset:0;background-image:url('/images/DSC5226.webp');background-size:cover;background-position:center}
+.fs-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,9,6,.96) 0%,rgba(13,9,6,.62) 55%,rgba(13,9,6,.04) 100%)}
+.fs-c{position:relative;z-index:2;padding:0 80px;max-width:600px}
+.fs-cat{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+.fs-h{font-family:var(--fd);font-size:clamp(64px,8vw,110px);line-height:.9;letter-spacing:.02em;margin-bottom:20px}
+.fs-desc{font-size:16px;color:var(--off);line-height:1.7;margin-bottom:36px;max-width:420px}
+.spec-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:36px}
+.sb{background:rgba(22,16,10,.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:10px;padding:14px}
+.sb-l{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.sb-v{font-family:var(--fd);font-size:24px;color:var(--blue);line-height:1;letter-spacing:.02em}
+.sb-u{font-size:12px;color:var(--off)}
+
+/* COMPARE */
+.compare{padding:100px 80px}
+.cmp-wrap{margin-top:52px;overflow-x:auto;border:1px solid var(--border);border-radius:16px}
+table{width:100%;border-collapse:collapse;min-width:820px}
+thead th{background:var(--card);padding:18px 20px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+thead th:first-child{color:var(--blue)}
+tbody tr{border-bottom:1px solid var(--border);transition:background .2s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--blue-dim)}
+tbody td{padding:17px 20px;font-size:13px;color:var(--off)}
+tbody td:first-child{font-family:var(--fd);font-size:19px;color:var(--white);letter-spacing:.03em}
+.spd{font-weight:700;color:var(--blue)!important}
+.td-buy{background:var(--blue);color:var(--ocean);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px;border-radius:6px;display:inline-block;transition:transform .2s}
+.td-buy:hover{transform:translateY(-1px)}
+
+/* PARTNER */
+.partner{padding:100px 80px;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}
+.pc{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--ocean);transition:border-color .3s,transform .3s}
+.pc:hover{border-color:rgba(255,125,31,.4);transform:translateY(-3px)}
+.pc img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pc-b{padding:18px}
+.pc-cat{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+.pc-name{font-family:var(--fd);font-size:20px;letter-spacing:.03em;margin-bottom:8px}
+.pc-desc{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:13px}
+.pc-link{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:6px;transition:gap .2s}
+.pc:hover .pc-link{gap:10px}
+
+/* GALLERY */
+.gallery{padding:100px 80px}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:52px}
+.gi{overflow:hidden;border-radius:8px}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gi:hover img{transform:scale(1.04)}
+.gi:nth-child(1){grid-column:1/3;aspect-ratio:16/9}
+.gi:nth-child(2){grid-column:3;grid-row:1/3;aspect-ratio:9/16}
+.gi:nth-child(3){grid-column:4;aspect-ratio:1}
+.gi:nth-child(4){grid-column:1;aspect-ratio:1}
+.gi:nth-child(5){grid-column:2;aspect-ratio:4/3}
+.gi:nth-child(6){grid-column:4;aspect-ratio:1}
+.gi:nth-child(7){grid-column:1/3;grid-row:3;aspect-ratio:21/9}
+.gi:nth-child(8){grid-column:3/5;grid-row:3;aspect-ratio:21/9}
+
+/* TESTI */
+.testi{padding:100px 80px;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.tc{background:var(--ocean);border:1px solid var(--border);border-radius:14px;padding:30px;position:relative}
+.tc-stars{color:var(--blue);font-size:15px;margin-bottom:18px}
+.tc-q{position:absolute;top:22px;right:26px;font-family:var(--fd);font-size:60px;color:var(--blue);opacity:.12;line-height:1}
+.tc-text{font-size:15px;color:var(--off);line-height:1.72;margin-bottom:22px;font-style:italic}
+.tc-author{font-size:13px;font-weight:700;color:var(--white)}
+.tc-loc{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* WHY */
+.why{padding:100px 80px}
+.w-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px}
+.wc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:34px 26px;transition:border-color .3s,transform .3s}
+.wc:hover{border-color:rgba(255,125,31,.4);transform:translateY(-3px)}
+.wc-icon{width:48px;height:48px;background:var(--blue-dim);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:22px}
+.wc-t{font-family:var(--fd);font-size:22px;letter-spacing:.03em;margin-bottom:10px}
+.wc-d{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* FAQ */
+.faq{padding:100px 80px;border-top:1px solid var(--border)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 60px;margin-top:52px}
+.fi{border-bottom:1px solid var(--border);padding:22px 0}
+.fq{font-size:14px;font-weight:600;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none;transition:color .2s}
+.fq:hover{color:var(--blue)}
+.fi-icon{flex-shrink:0;color:var(--blue);font-size:18px;line-height:1;transition:transform .3s}
+.fi.open .fi-icon{transform:rotate(45deg)}
+.fa{font-size:13px;color:var(--off);line-height:1.72;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.fi.open .fa{max-height:260px;padding-top:14px}
+
+/* FOOTER */
+footer{background:var(--ocean);border-top:1px solid var(--border);padding:68px 80px 36px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:52px}
+.ft-logo{font-family:var(--fd);font-size:32px;letter-spacing:.06em;display:block;margin-bottom:14px}
+.ft-logo em{font-style:normal;color:var(--blue)}
+.ft-tag{font-size:13px;color:var(--muted);line-height:1.72;margin-bottom:22px;max-width:270px}
+.ft-socs{display:flex;gap:10px}
+.ft-soc{width:36px;height:36px;background:var(--card);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;transition:border-color .2s,background .2s}
+.ft-soc:hover{border-color:var(--blue);background:var(--blue-dim)}
+.ft-col h4{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--white);margin-bottom:18px}
+.ft-col ul{list-style:none}
+.ft-col ul li{margin-bottom:10px}
+.ft-col ul li a{font-size:13px;color:var(--muted);transition:color .2s}
+.ft-col ul li a:hover{color:var(--blue)}
+.ft-wh{display:flex;gap:14px;margin-top:36px;padding-top:30px;border-top:1px solid var(--border)}
+.ft-badge{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 16px}
+.ft-badge-f{font-size:20px}
+.ft-badge-i strong{display:block;font-size:12px;font-weight:600;color:var(--white)}
+.ft-badge-i span{font-size:11px;color:var(--muted)}
+.ft-btm{padding-top:28px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.ft-copy{font-size:12px;color:var(--muted)}
+.ft-pol{display:flex;gap:22px}
+.ft-pol a{font-size:12px;color:var(--muted);transition:color .2s}
+.ft-pol a:hover{color:var(--blue)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}.rv.d4{transition-delay:.48s}
+
+@media(max-width:1100px){
+  .nav{padding:0 24px}
+  .stats,.featured,.compare,.gallery,.why,.partner,.testi,.faq,footer,.feel-stmt{padding-left:24px;padding-right:24px}
+  .fs-c{padding:0 24px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .h-content{padding:0 24px 60px}
+  .h-h1{font-size:62px}
+  .h-dots{left:24px}
+  .stats{grid-template-columns:repeat(3,1fr);padding:20px}
+  .stat:nth-child(4),.stat:nth-child(5){border-right:none}
+  .feel-grid{grid-template-columns:1fr;height:auto}
+  .fp{height:260px}
+  .feat-grid,.t-grid,.w-grid,.p-grid{grid-template-columns:1fr}
+  .feat-hdr{flex-direction:column;align-items:flex-start;gap:20px}
+  .faq-grid,.ft{grid-template-columns:1fr}
+  .spec-row{grid-template-columns:1fr 1fr}
+  .g-grid{grid-template-columns:1fr 1fr}
+  .gi:nth-child(n){grid-column:auto;grid-row:auto;aspect-ratio:4/3}
+}
+
+/* ── MOBILE NAV ── */
+.mob-menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none;flex-shrink:0}
+.mob-menu span{display:block;width:22px;height:2px;background:var(--off);border-radius:2px;transition:transform .3s,opacity .3s,background .3s}
+.mob-menu:hover span{background:var(--b)}
+.mob-menu.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mob-menu.open span:nth-child(2){opacity:0}
+.mob-menu.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-drawer{display:none;position:fixed;inset:0;top:102px;background:rgba(13,9,6,.98);backdrop-filter:blur(20px);z-index:99;overflow-y:auto;padding:24px 20px 40px;flex-direction:column;gap:6px}
+.mob-drawer.open{display:flex}
+.mob-section{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--m);margin:16px 0 8px}
+.mob-section:first-child{margin-top:0}
+.mob-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;color:var(--off);font-size:14px;font-weight:600;transition:background .2s,color .2s;text-decoration:none}
+.mob-link:hover,.mob-link.cur{background:var(--bd);color:var(--b)}
+.mob-link img{width:38px;height:30px;border-radius:5px;object-fit:cover;flex-shrink:0}
+.mob-wa{background:#25D366;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:14px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;text-decoration:none}
+@media(max-width:768px){
+  .mob-menu{display:flex}
+  .nav-links{display:none!important}
+  .nav{padding:0 16px}
+  .nav-logo{font-size:22px}
+}
+@media(max-width:480px){
+  .ph{padding-left:16px!important;padding-right:16px!important}
+  .bc{padding-left:16px!important;padding-right:16px!important}
+  .spsec,.cpsec,.relsec,.backbar,.col-body,.hero-c,.wrap{padding-left:16px!important;padding-right:16px!important}
+  .col-grid{grid-template-columns:1fr!important}
+  .pname{font-size:42px!important}
+  .price{font-size:38px!important}
+  .qs{grid-template-columns:1fr 1fr!important}
+  .thumbs{grid-template-columns:repeat(4,1fr)!important}
+}
+
+@media(max-width:768px){
+  .nav-logo{font-size:20px!important}
+  .nav-item{display:none!important}
+  .nav-actions .nav-wa{display:none!important}
+}
+
+/* ── Reviews ─────────────────────────────── */
+.rv-sec{padding:56px 80px;border-top:1px solid rgba(255,125,31,.1);max-width:1400px;margin:0 auto}
+.rv-sec-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px}
+.rv-sec-title{font-family:'Anton',sans-serif;font-size:36px;letter-spacing:.04em}
+.rv-rating{display:flex;align-items:center;gap:6px}
+.rv-score{font-family:'Anton',sans-serif;font-size:28px;color:#F59E0B;margin-left:4px}
+.rv-count{font-size:13px;color:#8d7c67;margin-left:2px}
+.rv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.rv-card{background:#16100a;border:1px solid rgba(255,125,31,.1);border-radius:14px;padding:22px 24px;transition:border-color .3s}
+.rv-card:hover{border-color:rgba(255,125,31,.3)}
+.rv-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.rv-av{width:38px;height:38px;border-radius:50%;background:rgba(255,125,31,.15);border:1px solid rgba(255,125,31,.3);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:18px;color:#ff7d1f;flex-shrink:0}
+.rv-name{font-size:13px;font-weight:700;color:#fff;line-height:1.2}
+.rv-loc{font-size:11px;color:#8d7c67;margin-top:2px}
+.rv-stars{display:flex;gap:2px;margin-left:auto}
+.rv-text{font-size:13px;color:#e6dccd;line-height:1.7;font-style:italic}
+.rv-date{font-size:11px;color:#8d7c67;margin-top:12px;letter-spacing:.04em}
+@media(max-width:768px){.rv-sec{padding:40px 16px}.rv-grid{grid-template-columns:1fr}.rv-sec-head{flex-direction:column;align-items:flex-start}}
+
+</style>
+<script src="/js/cart.js"></script>
+<script src="/js/site-config.js" defer></script>
+
+<style>
+#rwMsgs::-webkit-scrollbar{width:3px}
+#rwMsgs::-webkit-scrollbar-thumb{background:rgba(255,125,31,.2);border-radius:2px}
+@keyframes rwBounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+
+/* ── FULL WIDTH MOBILE FIX ── */
+@media(max-width:768px){
+  html, body{width:100%;overflow-x:hidden;box-sizing:border-box}
+  .nav{width:100%;box-sizing:border-box;padding:0 16px!important}
+  .hero-c{padding-left:16px!important;padding-right:16px!important}
+  .hero{width:100%!important}
+  .ph{width:100%;box-sizing:border-box;padding:0 16px 60px!important;display:flex!important;flex-direction:column!important;gap:24px!important}
+  .gcol,.ic{width:100%!important;max-width:100%!important;position:static!important}
+  .bc{padding:12px 16px!important;width:100%;box-sizing:border-box}
+  .col-body{padding:32px 16px 60px!important;width:100%;box-sizing:border-box}
+  .col-grid{grid-template-columns:1fr!important;width:100%}
+  .pc{width:100%!important}
+  .spsec,.cpsec,.relsec,.backbar{padding-left:16px!important;padding-right:16px!important;width:100%;box-sizing:border-box}
+  .wrap{padding:24px 16px 60px!important;width:100%;box-sizing:border-box}
+  .content-sections .cs{grid-template-columns:1fr!important;width:100%}
+  .cs-body{padding:28px 16px!important}
+  .relgr,.cpgr{grid-template-columns:1fr!important}
+  .spgr{grid-template-columns:1fr 1fr!important}
+  .ctab{width:100%}
+  .bpe,.bpw{width:100%;box-sizing:border-box}
+  .qs{grid-template-columns:1fr 1fr!important}
+  .whs{flex-direction:column}
+  .cart-layout,.co-layout{grid-template-columns:1fr!important;width:100%;box-sizing:border-box}
+  .item{grid-template-columns:72px 1fr!important}
+  footer>div{padding-left:16px!important;padding-right:16px!important;width:100%;box-sizing:border-box}
+  footer>div>div:first-child{grid-template-columns:1fr!important}
+}
+
+@media(max-width:768px){
+  .mob-menu{display:flex!important}
+  .nwa{display:none!important}
+  .nav-links{display:none!important}
+  .nav{justify-content:space-between!important}
+  /* hide cart text on mobile — cart accessible via hamburger menu */
+
+}
+
+@media(max-width:768px){
+  .nwa-text{display:none}
+  .nwa{padding:10px!important;border-radius:50%!important;width:40px!important;height:40px!important;display:flex!important;align-items:center!important;justify-content:center!important;flex-shrink:0!important}
+  .nwa svg{width:18px!important;height:18px!important;flex-shrink:0}
+  .nav>a[href="/cart.html"],.nav>a[href="../cart.html"],.nav>a[href="cart.html"]{display:flex!important;flex-shrink:0}
+  .nav{gap:6px!important}
+}
+
+@media(max-width:768px){
+  .nwa-text{display:none}
+  .nav-wa .nwa-text{display:none}
+  .nav-wa{padding:10px!important;border-radius:50%!important;width:40px!important;height:40px!important;display:flex!important;align-items:center!important;justify-content:center!important;flex-shrink:0}
+  .nav-wa svg{width:18px!important;height:18px!important}
+  .nav-actions{gap:6px!important}
+}
+
+.nav{gap:8px}
+.mob-menu{margin-left:0}
+@media(max-width:768px){
+  .nav{gap:4px!important}
+  .mob-menu{margin-left:0!important}
+}
+</style>
+
+
+  <meta name="description" content="High-performance electric surfboards, E-Foils, jet boats and Honda-powered RIBs. 5 global warehouses. Ships in 3-7 days.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://waveriderboat.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WAVERIDER — Electric Surfboards, E-Foils & Boats">
+  <meta property="og:description" content="High-performance electric surfboards, E-Foils, jet boats and Honda-powered RIBs. 5 global warehouses. Ships in 3-7 days.">
+  <meta property="og:url" content="https://waveriderboat.com/">
+  <meta property="og:image" content="https://waveriderboat.com/images/20260408155905_192_38.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="WAVERIDER">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WAVERIDER — Electric Surfboards, E-Foils & Boats">
+  <meta name="twitter:description" content="High-performance electric surfboards, E-Foils, jet boats and Honda-powered RIBs. 5 global warehouses. Ships in 3-7 days.">
+  <meta name="twitter:image" content="https://waveriderboat.com/images/20260408155905_192_38.webp">
+  <script type="application/ld+json">[{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WAVERIDER",
+      "url": "https://waveriderboat.com",
+      "logo": "https://waveriderboat.com/images/h1-hero-surf.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+18312964971",
+        "contactType": "sales",
+        "email": "waverideboat@gmail.com"
+      }
+    }]</script>
+</head>
+<body>
+
+<!-- ANNOUNCE -->
+<div class="ann">
+  <div class="ann-t">
+    <span>EU &mdash; Poland</span>
+    <span>USA &mdash; Los Angeles</span>
+    <span>Free shipping on orders over $5,000</span>
+    <span>WhatsApp support within 24h</span>
+    <span>1-year product warranty</span>
+    <span>EU &mdash; Poland</span>
+    <span>USA &mdash; Los Angeles</span>
+    <span>Free shipping on orders over $5,000</span>
+    <span>WhatsApp support within 24h</span>
+    <span>1-year product warranty</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">WAVE<em>RIDER</em></a>
+  <div class="nav-links">
+
+    <div class="nav-item">
+      <button>Electric <svg class="nav-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="nav-drop">
+        <a href="products/rider-h1.html" class="nav-di"><img class="nav-dt" src="/images/h1-hero-surf.webp" alt=""><span class="nav-dn">H1 Glide</span></a>
+        <a href="products/g2.html" class="nav-di"><img class="nav-dt" src="/images/20250117165455.webp" alt=""><span class="nav-dn">G2 Bolt</span></a>
+        <a href="products/g3.html" class="nav-di"><img class="nav-dt" src="/images/3034a1133efe01daba919094b70c6310.webp" alt=""><span class="nav-dn">G3 Cruise</span></a>
+        <a href="products/f0.html" class="nav-di"><img class="nav-dt" src="/images/DSC5244.webp" alt=""><span class="nav-dn">F0 Sport</span></a>
+        <a href="products/f2.html" class="nav-di"><img class="nav-dt" src="/images/DSC5233.webp" alt=""><span class="nav-dn">F2 Apex</span></a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <button>E-Foil <svg class="nav-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="nav-drop" style="grid-template-columns:1fr;min-width:200px">
+        <a href="products/y1-carbon.html" class="nav-di"><img class="nav-dt" src="/images/LJF05152.webp" alt=""><span class="nav-dn">Y1 Carbon</span></a>
+        <a href="products/y1-epp.html" class="nav-di"><img class="nav-dt" src="/images/20250627103950.webp" alt=""><span class="nav-dn">Y1 EPP</span></a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <button>Boats <svg class="nav-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="nav-drop">
+        <a href="products/v1-boat.html" class="nav-di"><img class="nav-dt" src="/images/3034a1133efe01daba919094b70c6310_edc7be8a-93ea-4a88-a2fb-68a90a29b449.webp" alt=""><span class="nav-dn">V1 Electric Boat</span></a>
+        <a href="products/v1-mini-jet-boat.html" class="nav-di"><img class="nav-dt" src="/images/v1-mini-jet-gallery1.webp" alt=""><span class="nav-dn">V1 Mini Jet Boat</span></a>
+        <a href="products/mini-electric-jet-boat.html" class="nav-di"><img class="nav-dt" src="/images/minijet-hero.webp" alt=""><span class="nav-dn">Mini Electric Jet Boat</span></a>
+        <a href="products/zar-mini-lux-13.html" class="nav-di"><img class="nav-dt" src="/images/zar-lux13-3.jpg" alt=""><span class="nav-dn">ZAR Mini LUX 13</span></a>
+        <a href="products/zar-mini-lux-14.html" class="nav-di"><img class="nav-dt" src="/images/zar-lux14-2.jpg" alt=""><span class="nav-dn">ZAR Mini LUX 14</span></a>
+        <a href="products/zar-49-sport-luxury.html" class="nav-di"><img class="nav-dt" src="/images/zar-49-1.jpg" alt=""><span class="nav-dn">ZAR 49 Sport</span></a>
+                <a href="products/donut-bbq-boat.html" class="nav-di"><img class="nav-dt" src="/images/donut-barbecue-boatfea49.webp" alt=""><span class="nav-dn">Donut BBQ Boat</span></a>
+        <a href="products/kart-boat.html" class="nav-di"><img class="nav-dt" src="/images/kart-boatd05b1.webp" alt=""><span class="nav-dn">Electric Kart Boat</span></a>
+        <a href="products/supercar-bumper-boat.html" class="nav-di"><img class="nav-dt" src="/images/waterborne-supercar-bumper-boat06da7.webp" alt=""><span class="nav-dn">Supercar Bumper</span></a>
+        <a href="products/swan-pedal-boat.html" class="nav-di"><img class="nav-dt" src="/images/little-swan-pedal-boatbf423.webp" alt=""><span class="nav-dn">Little Swan Pedal</span></a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <button>Gas <svg class="nav-chev" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="nav-drop" style="grid-template-columns:1fr;min-width:220px">
+        <a href="products/raptor-efi-02.html" class="nav-di"><img class="nav-dt" src="/images/8.webp" alt=""><span class="nav-dn">Raptor EFI 02</span></a>
+        <a href="products/raptor-efi-03.html" class="nav-di"><img class="nav-dt" src="/images/340bf129-c410-498b-a139-7cf5974ba638.webp" alt=""><span class="nav-dn">Raptor EFI 03</span></a>
+      </div>
+    </div>
+
+    <div class="nav-item"><a href="collections/jetski.html">Jet Ski</a></div>
+    <div class="nav-item"><a href="collections/accessories.html">Accessories</a></div>
+  </div>
+
+  <a href="/cart.html" style="position:relative;flex-shrink:0;display:flex;align-items:center;gap:6px;color:#e6dccd;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:6px;transition:color .2s,background .2s" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+    Cart
+    <span id="cartBadge" style="display:none;position:absolute;top:4px;right:4px;background:#ff7d1f;color:#0d0906;font-size:9px;font-weight:900;width:16px;height:16px;border-radius:50%;align-items:center;justify-content:center;line-height:1">0</span>
+  </a>
+  <button class="mob-menu" id="mobBtn" onclick="toggleMob(event)" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-section">Electric Surfboards</div>
+  <a href="products/rider-h1.html" class="mob-link" onclick="closeMob()"><img src="/images/h1-hero-surf.webp" alt="">H1 Glide</a>
+  <a href="products/g2.html" class="mob-link" onclick="closeMob()"><img src="/images/20250117165455.webp" alt="">G2 Bolt</a>
+  <a href="products/g3.html" class="mob-link" onclick="closeMob()"><img src="/images/3034a1133efe01daba919094b70c6310.webp" alt="">G3 Cruise</a>
+  <a href="products/f0.html" class="mob-link" onclick="closeMob()"><img src="/images/DSC5244.webp" alt="">F0 Sport</a>
+  <a href="products/f2.html" class="mob-link" onclick="closeMob()"><img src="/images/DSC5233.webp" alt="">F2 Apex</a>
+
+  <div class="mob-section">E-Foil</div>
+  <a href="products/y1-carbon.html" class="mob-link" onclick="closeMob()"><img src="/images/LJF05152.webp" alt="">Y1 Carbon</a>
+  <a href="products/y1-epp.html" class="mob-link" onclick="closeMob()"><img src="/images/20250627103950.webp" alt="">Y1 EPP</a>
+
+  <div class="mob-section">Boats</div>
+  <a href="products/v1-boat.html" class="mob-link" onclick="closeMob()"><img src="/images/3034a1133efe01daba919094b70c6310_edc7be8a-93ea-4a88-a2fb-68a90a29b449.webp" alt="">V1 Electric Boat</a>
+  <a href="products/v1-mini-jet-boat.html" class="mob-link" onclick="closeMob()"><img src="/images/v1-mini-jet-gallery1.webp" alt="">V1 Mini Jet Boat</a>
+  <a href="products/donut-bbq-boat.html" class="mob-link" onclick="closeMob()"><img src="/images/new donut barbecue to add3.webp" alt="">Donut BBQ Boat</a>
+  <a href="products/kart-boat.html" class="mob-link" onclick="closeMob()"><img src="/images/kart-boatd05b1.webp" alt="">Electric Kart Boat</a>
+  <a href="products/supercar-bumper-boat.html" class="mob-link" onclick="closeMob()"><img src="/images/waterborne-supercar-bumper-boat06da7.webp" alt="">Supercar Bumper</a>
+  <a href="products/swan-pedal-boat.html" class="mob-link" onclick="closeMob()"><img src="/images/little-swan-pedal-boatbf423.webp" alt="">Little Swan Pedal</a>
+  <a href="products/mini-electric-jet-boat.html" class="mob-link" onclick="closeMob()"><img src="/images/minijet-hero.webp" alt="">Mini Electric Jet Boat</a>
+  <a href="products/zar-mini-lux-13.html" class="mob-link" onclick="closeMob()"><img src="/images/zar-lux13-3.jpg" alt="">ZAR Mini LUX 13</a>
+  <a href="products/zar-mini-lux-14.html" class="mob-link" onclick="closeMob()"><img src="/images/zar-lux14-2.jpg" alt="">ZAR Mini LUX 14</a>
+  <a href="products/zar-49-sport-luxury.html" class="mob-link" onclick="closeMob()"><img src="/images/zar-49-1.jpg" alt="">ZAR 49 Sport</a>
+    <div class="mob-section">Jet Ski</div>
+    <a href="products/waverunner.html" class="mob-link" onclick="closeMob()"><img src="/images/All-WaveRunner-Series.webp" alt="">Yamaha WaveRunner</a>
+    <div class="mob-section">Gas Surfboards</div>
+  <a href="products/raptor-efi-02.html" class="mob-link" onclick="closeMob()"><img src="/images/8.webp" alt="">Raptor EFI 02</a>
+  <a href="products/raptor-efi-03.html" class="mob-link" onclick="closeMob()"><img src="/images/340bf129-c410-498b-a139-7cf5974ba638.webp" alt="">Raptor EFI 03</a>
+  <div class="mob-section">Accessories</div>
+  <a href="collections/accessories.html" class="mob-link" onclick="closeMob()">Accessories &amp; Batteries</a>
+  <a href="collections/batteries.html" class="mob-link" onclick="closeMob()">Extra Batteries</a>
+  <a href="collections/surf-boat-set.html" class="mob-link" onclick="closeMob()">Surf Boat Set</a>
+
+  <a href="/cart.html" class="mob-link" onclick="closeMob()" style="margin-top:8px">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+    View Cart
+  </a>
+  <a href="https://wa.me/18312964971" target="_blank" class="mob-wa">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    WhatsApp Us
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="h-slides" id="hSlides">
+    <div class="h-slide active" style="background-image:url('/images/20260408155905_192_38.webp')"></div>
+    <div class="h-slide" style="background-image:url('/images/78.webp')"></div>
+    <div class="h-slide" style="background-image:url('/images/h1-hero-surf.webp')"></div>
+    <div class="h-slide" style="background-image:url('/images/FX-HO.webp')"></div>
+    <div class="h-slide" style="background-image:url('/images/zar-49-1.jpg')"></div>
+  </div>
+  <div class="h-ov"></div>
+  <div class="h-content">
+    <div class="h-eye">Watercraft Outfitters</div>
+    <h1 class="h-h1">MAKE THE<em>WATER MOVE</em></h1>
+    <p class="h-sub">Electric surfboards, E-Foils, Yamaha WaveRunners, jet boats<br>and Honda-powered RIBs &mdash; at your door in 3&ndash;7 days.</p>
+    <div class="h-ctas">
+      <a href="collections/electric.html" class="btn-p">Shop Now</a>
+      <a href="#compare" class="btn-o">Compare Models</a>
+    </div>
+  </div>
+  <div class="h-dots" id="hDots"></div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat rv"><div class="stat-n"><span class="ctr" data-t="75">0</span><span class="stat-u">KM/H</span></div><div class="stat-l">Top Speed</div></div>
+  <div class="stat rv d1"><div class="stat-n"><span class="ctr" data-t="20">0</span><span class="stat-u">KW</span></div><div class="stat-l">Max Power</div></div>
+  <div class="stat rv d2"><div class="stat-n"><span class="ctr" data-t="40">0</span><span class="stat-u">dB</span></div><div class="stat-l">Ultra Silent</div></div>
+  <div class="stat rv d3"><div class="stat-n"><span class="ctr" data-t="2">0</span><span class="stat-u">HR</span></div><div class="stat-l">Fast Charge</div></div>
+  <div class="stat rv d4"><div class="stat-n"><span class="ctr" data-t="10">0</span><span class="stat-u">+YRS</span></div><div class="stat-l">Hull Lifespan</div></div>
+</div>
+
+<!-- FEEL THE RUSH -->
+<section class="feel">
+  <div class="feel-grid">
+    <div class="fp">
+      <img src="/images/DSC5226.webp" alt="Speed" loading="lazy">
+      <div class="fp-ov"><div><div class="fp-label">BUILT FOR SPEED</div><div class="fp-sub">Carbon fiber race construction</div></div></div>
+    </div>
+    <div class="fp">
+      <img src="/images/LJF05152.webp" alt="E-Foil" loading="lazy">
+      <div class="fp-ov"><div><div class="fp-label">FLY ABOVE WATER</div><div class="fp-sub">E-Foil hydrofoil technology</div></div></div>
+    </div>
+    <div class="fp">
+      <img src="/images/334.webp" alt="Electric kart boat on the water" loading="lazy">
+      <div class="fp-ov"><div><div class="fp-label">DOMINATE THE WATER</div><div class="fp-sub">Electric go-kart boat</div></div></div>
+    </div>
+  </div>
+  <div class="feel-stmt rv">
+    <h2>ONE GARAGE.<br><em>EVERY KIND OF FAST.</em></h2>
+    <p>From a first careful lap behind a console to a full-throttle carbon race board &mdash; WAVERIDER stocks the machine that fits your water, your skill level and your appetite for speed.</p>
+  </div>
+</section>
+
+<!-- FEATURED — 3 cards -->
+<section class="featured" id="products">
+  <div class="feat-hdr rv">
+    <div>
+      <div class="eyebrow">Featured</div>
+      <h2 class="sec-h">THREE WAYS TO RIDE</h2>
+      <p class="sec-d">Three different answers to the same question: how do you want to move across water?</p>
+    </div>
+    <a href="collections/electric.html" class="see-all">View Full Collection &rarr;</a>
+  </div>
+  <div class="feat-grid">
+
+    <!-- F2 -->
+    <div class="fc rv">
+      <div class="fc-img">
+        <img src="/images/DSC5233.webp" alt="F2 Apex">
+        <img class="alt" src="/images/DSC5254.webp" alt="F2 Apex deck detail">
+        <div class="fc-pill">Electric Surfboard</div>
+      </div>
+      <div class="fc-body">
+        <div class="fc-name">F2 APEX</div>
+        <p class="fc-desc">Our flagship race board. Full carbon shell, integrated competition battery, and a 20 KW drive that pulls 0&ndash;40 KM/H in two seconds flat.</p>
+        <div class="fc-stats"><span class="fc-stat">75 KM/H</span><span class="fc-stat">20 KW</span><span class="fc-stat">All Carbon</span></div>
+        <a href="products/f2.html" class="fc-link">Explore the F2 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Y1 Carbon -->
+    <div class="fc rv d1">
+      <div class="fc-img">
+        <img src="/images/20260408155905_192_38.webp" alt="Y1 Carbon E-Foil">
+        <img class="alt" src="/images/LJF05148.webp" alt="Y1 Carbon alt">
+        <div class="fc-pill">E-Foil</div>
+      </div>
+      <div class="fc-body">
+        <div class="fc-name">Y1 CARBON</div>
+        <p class="fc-desc">Hydrofoil flight with no wake and no noise. Carbon shell, a 24-step wireless throttle with color display, and up to 90 minutes in the air.</p>
+        <div class="fc-stats"><span class="fc-stat">45 KM/H</span><span class="fc-stat">8 KW</span><span class="fc-stat">90 Min Ride</span></div>
+        <a href="products/y1-carbon.html" class="fc-link">Explore the Y1 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- V1 Boat -->
+    <div class="fc rv d2">
+      <div class="fc-img">
+        <img src="/images/2_2027b0e5-86ec-4808-be59-311244d21908.webp" alt="V1 Electric Kart Boat">
+        <img class="alt" src="/images/78.webp" alt="V1 kart boat in action">
+        <div class="fc-pill">Electric Boat</div>
+      </div>
+      <div class="fc-body">
+        <div class="fc-name">V1 BOAT</div>
+        <p class="fc-desc">A two-seat electric kart for open water. 16 KW of integrated drive and a turning circle tight enough to make a lake feel like a race track.</p>
+        <div class="fc-stats"><span class="fc-stat">50 KM/H</span><span class="fc-stat">16 KW</span><span class="fc-stat">Dual Seat</span></div>
+        <a href="products/v1-boat.html" class="fc-link">Explore the V1 &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FLAGSHIP F2 FULL BLEED -->
+<section class="flagship">
+  <div class="fs-bg">
+    <div class="fs-img"></div>
+    <div class="fs-ov"></div>
+    <div class="fs-c rv">
+      <div class="fs-cat">&spar; Flagship &mdash; Electric Surfboard</div>
+      <h2 class="fs-h">F2 APEX</h2>
+      <p class="fs-desc">Full carbon construction and an integrated race battery, tuned for one job: holding 75 KM/H on open water. This is the board the rest of the lineup answers to.</p>
+      <div class="spec-row">
+        <div class="sb"><div class="sb-l">Top Speed</div><div class="sb-v">75<span class="sb-u"> KM/H</span></div></div>
+        <div class="sb"><div class="sb-l">Max Power</div><div class="sb-v">20<span class="sb-u"> KW</span></div></div>
+        <div class="sb"><div class="sb-l">0&rarr;40KM/H</div><div class="sb-v">2<span class="sb-u"> SEC</span></div></div>
+        <div class="sb"><div class="sb-l">Shell</div><div class="sb-v" style="font-size:16px;padding-top:4px;line-height:1.2">All<br>Carbon</div></div>
+      </div>
+      <div class="h-ctas">
+        <a href="products/f2.html" class="btn-p">See the F2</a>
+        <a href="https://wa.me/18312964971" target="_blank" class="btn-o">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare" id="compare">
+  <div class="eyebrow rv">Electric Surfboards</div>
+  <h2 class="sec-h rv">COMPARE ALL MODELS</h2>
+  <p class="sec-d rv">Every electric board side by side. Find your level.</p>
+  <div class="cmp-wrap rv">
+    <table>
+      <thead><tr><th>Model</th><th>Shell</th><th>Speed</th><th>Power</th><th>Battery</th><th>Best For</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>H1 GLIDE</td><td>EPP HydroVent</td><td class="spd">52 KM/H</td><td>12 KW</td><td>3.8&ndash;4.4 KWH</td><td>Beginners</td><td><a href="products/rider-h1.html" class="td-buy">View</a></td></tr>
+        <tr><td>G2 BOLT</td><td>EPP 1000Pa</td><td class="spd">55 KM/H</td><td>14 KW</td><td>IP67</td><td>All Levels</td><td><a href="products/g2.html" class="td-buy">View</a></td></tr>
+        <tr><td>G3 CRUISE</td><td>EPP Wide Body</td><td class="spd">40 KM/H</td><td>14 KW</td><td>IP67</td><td>Stability</td><td><a href="products/g3.html" class="td-buy">View</a></td></tr>
+        <tr><td>F0 SPORT</td><td>Aviation Carbon</td><td class="spd">65 KM/H</td><td>16 KW</td><td>3.7&ndash;4.0 KWH</td><td>Performance</td><td><a href="products/f0.html" class="td-buy">View</a></td></tr>
+        <tr><td>F2 APEX</td><td>Full Carbon Race</td><td class="spd" style="color:#fff!important;font-weight:900">75 KM/H &spar;</td><td>20 KW</td><td>Integrated</td><td>Race / Pro</td><td><a href="products/f2.html" class="td-buy">View</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- RIB RANGE -->
+<section class="featured" id="ribs" style="padding-top:0">
+  <div class="feat-hdr rv">
+    <div>
+      <div class="eyebrow">New &mdash; Rigid Inflatables</div>
+      <h2 class="sec-h">HONDA-POWERED RIBS</h2>
+      <p class="sec-d">Italian-built ZAR Formenti hulls rigged with Honda outboards, supplied as complete ready-to-launch packages.</p>
+    </div>
+    <a href="collections/boats.html" class="see-all">All Boats &rarr;</a>
+  </div>
+  <div class="feat-grid">
+
+    <div class="fc rv">
+      <div class="fc-img">
+        <img src="/images/zar-lux13-3.jpg" alt="ZAR Mini LUX 13 console RIB" loading="lazy">
+        <img class="alt" src="/images/zar-lux13-5.jpg" alt="ZAR Mini LUX 13 on the water" loading="lazy">
+        <div class="fc-pill">Console RIB</div>
+      </div>
+      <div class="fc-body">
+        <div class="fc-name">ZAR MINI LUX 13</div>
+        <p class="fc-desc">A 3.9 m console RIB on a 148 kg aluminium hull. Six aboard, EVA teak-effect deck, and Honda power from 30 to 50 horses.</p>
+        <div class="fc-stats"><span class="fc-stat">3.9 M</span><span class="fc-stat">6 Persons</span><span class="fc-stat">Honda 30&ndash;50HP</span></div>
+        <a href="products/zar-mini-lux-13.html" class="fc-link">Explore the LUX 13 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="fc rv d1">
+      <div class="fc-img">
+        <img src="/images/zar-lux14-2.jpg" alt="ZAR Mini LUX 14 console RIB" loading="lazy">
+        <img class="alt" src="/images/zar-lux14-x9.jpg" alt="ZAR Mini LUX 14 deck" loading="lazy">
+        <div class="fc-pill">Console RIB</div>
+      </div>
+      <div class="fc-body">
+        <div class="fc-name">ZAR MINI LUX 14</div>
+        <p class="fc-desc">The 4.2 m step-up: eight seats, fixed rear bench, flat double flooring &mdash; still light enough for a driveway trailer.</p>
+        <div class="fc-stats"><span class="fc-stat">4.2 M</span><span class="fc-stat">8 Persons</span><span class="fc-stat">Honda up to 60HP</span></div>
+        <a href="products/zar-mini-lux-14.html" class="fc-link">Explore the LUX 14 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="fc rv d2">
+      <div class="fc-img">
+        <img src="/images/zar-49-1.jpg" alt="ZAR 49 Sport Luxury RIB" loading="lazy">
+        <img class="alt" src="/images/zar-49-3.jpg" alt="ZAR 49 Sport Luxury bow" loading="lazy">
+        <div class="fc-pill">Sport RIB</div>
+      </div>
+      <div class="fc-body">
+        <div class="fc-name">ZAR 49 SPORT LUXURY</div>
+        <p class="fc-desc">ZAR&rsquo;s 4.9 m pocket flagship: deep-V hull, convertible bow lounge, integral 100 L tank and up to 100 Honda horsepower.</p>
+        <div class="fc-stats"><span class="fc-stat">4.9 M</span><span class="fc-stat">9 Persons</span><span class="fc-stat">Honda up to 100HP</span></div>
+        <a href="products/zar-49-sport-luxury.html" class="fc-link">Explore the 49 SL &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- YAMAHA WAVERUNNER -->
+<section class="flagship" id="jetski-band">
+  <div class="fs-bg" style="height:78vh;min-height:540px">
+    <div class="fs-img" style="background-image:url('/images/WaveRunner-Family-Photo.webp');filter:saturate(.85) brightness(.95)"></div>
+    <div class="fs-ov"></div>
+    <div class="fs-c rv">
+      <div class="fs-cat">&spar; Jet Ski &mdash; Yamaha WaveRunner</div>
+      <h2 class="fs-h">TEN WAYS TO<br>RUN A WAVE</h2>
+      <p class="fs-desc">We deliver Yamaha&rsquo;s complete 2025 WaveRunner lineup &mdash; three series, ten models, from the playful JetBlaster to the supercharged 250 HP GP SVHO &mdash; with the same door-to-door logistics as everything else in the garage.</p>
+      <div class="spec-row">
+        <div class="sb"><div class="sb-l">Models</div><div class="sb-v">10</div></div>
+        <div class="sb"><div class="sb-l">Series</div><div class="sb-v">3</div></div>
+        <div class="sb"><div class="sb-l">Max Power</div><div class="sb-v">250<span class="sb-u"> HP</span></div></div>
+        <div class="sb"><div class="sb-l">From</div><div class="sb-v">$8<span class="sb-u">K</span></div></div>
+      </div>
+      <div class="h-ctas">
+        <a href="products/waverunner.html" class="btn-p">See All 10 Models</a>
+        <a href="collections/jetski.html" class="btn-o">Jet Ski Collection</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section class="partner">
+  <div class="eyebrow rv">Partner Collection</div>
+  <h2 class="sec-h rv">BEYOND THE BOARD</h2>
+  <p class="sec-d rv">Water entertainment for gatherings, parks, and commercial operators.</p>
+  <div class="p-grid">
+    <div class="pc rv"><img src="/images/donut-barbecue-boatfea49.webp" alt="BBQ Boat" loading="lazy"><div class="pc-b"><div class="pc-cat">BBQ Boat</div><div class="pc-name">DONUT BBQ</div><p class="pc-desc">6&ndash;8 person leisure yacht. Picnic table, sunshade, full guardrails.</p><a href="products/donut-bbq-boat.html" class="pc-link">View &rarr;</a></div></div>
+    <div class="pc rv d1"><img src="/images/kart-boatd05b1.webp" alt="Kart Boat" loading="lazy"><div class="pc-b"><div class="pc-cat">Electric Go-Karting</div><div class="pc-name">KART BOAT</div><p class="pc-desc">72V 15KW &middot; 35KM/H &middot; CE certified. 10-year hull lifespan.</p><a href="products/kart-boat.html" class="pc-link">View &rarr;</a></div></div>
+    <div class="pc rv d2"><img src="/images/waterborne-supercar-bumper-boat06da7.webp" alt="Bumper Boat" loading="lazy"><div class="pc-b"><div class="pc-cat">Bumper Boat</div><div class="pc-name">SUPERCAR</div><p class="pc-desc">Inflatable impact ring, water gun. 4 persons &middot; 6&ndash;8hr runtime.</p><a href="products/supercar-bumper-boat.html" class="pc-link">View &rarr;</a></div></div>
+    <div class="pc rv d3"><img src="/images/little-swan-pedal-boatbf423.webp" alt="Swan Boat" loading="lazy"><div class="pc-b"><div class="pc-cat">Pedal Boat</div><div class="pc-name">LITTLE SWAN</div><p class="pc-desc">Pedal or electric drive. 10+ year hull. Park and sightseeing ready.</p><a href="products/swan-pedal-boat.html" class="pc-link">View &rarr;</a></div></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="eyebrow rv">Lifestyle</div>
+  <h2 class="sec-h rv">LIVE IN THE WATER</h2>
+  <div class="g-grid rv">
+    <div class="gi"><img src="/images/FX-HO.webp" alt="Yamaha WaveRunner on open water" loading="lazy"></div>
+    <div class="gi"><img src="/images/zar-lux14-x9.jpg" alt="ZAR RIB bow seating" loading="lazy"></div>
+    <div class="gi"><img src="/images/DSC5226.webp" alt="" loading="lazy"></div>
+    <div class="gi"><img src="/images/zar-lux13-x8.jpg" alt="ZAR RIB cockpit" loading="lazy"></div>
+    <div class="gi"><img src="/images/LJF05158.webp" alt="E-Foil board" loading="lazy"></div>
+    <div class="gi"><img src="/images/LJF05148.webp" alt="E-Foil hydrofoil" loading="lazy"></div>
+    <div class="gi"><img src="/images/zar-49-3.jpg" alt="ZAR 49 Sport Luxury on the water" loading="lazy"></div>
+    <div class="gi"><img src="/images/zar-lux14-2.jpg" alt="ZAR Mini LUX 14 on trailer" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="eyebrow rv">Reviews</div>
+  <h2 class="sec-h rv">RIDERS SPEAK</h2>
+  <div class="t-grid">
+    <div class="tc rv"><div class="tc-q">"</div><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">The H1 is my first electric surfboard and I cannot believe how fast I got on it. First session, 20 minutes, I was riding. The channeled bottom plate genuinely makes a difference.</p><div class="tc-author">Marcus T.</div><div class="tc-loc">Gold Coast, Australia</div></div>
+    <div class="tc rv d1"><div class="tc-q">"</div><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">Ordered the Y1 Carbon, shipped from EU to Germany in 5 days. The 24-gear remote is incredibly precise. Hovering above flat water at 30KM/H feels like science fiction.</p><div class="tc-author">Elena R.</div><div class="tc-loc">Munich, Germany</div></div>
+    <div class="tc rv d2"><div class="tc-q">"</div><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="tc-text">The V1 is an absolute monster. 50KM/H on water in a go-kart that seats two. We run it as a rental at our lake resort. Guest demand has been insane since day one.</p><div class="tc-author">Jake M.</div><div class="tc-loc">Lake Tahoe, USA</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="eyebrow rv">Why WAVERIDER</div>
+  <h2 class="sec-h rv">BUILT DIFFERENT</h2>
+  <div class="w-grid">
+    <div class="wc rv"><div class="wc-icon">&#127981;</div><div class="wc-t">DIRECT IMPORT</div><p class="wc-d">We buy straight from the builders and ship from our own warehouses &mdash; you pay for the machine, not a dealer chain.</p></div>
+    <div class="wc rv d1"><div class="wc-icon">&#127760;</div><div class="wc-t">GLOBAL STOCK</div><p class="wc-d">5 global warehouses: Poland, Los Angeles, Queensland (AU), UK and Shenzhen (CN). 3&ndash;7 day delivery, fully tracked.</p></div>
+    <div class="wc rv d2"><div class="wc-icon">&#128300;</div><div class="wc-t">RIDE-TESTED RANGE</div><p class="wc-d">Every model we list gets time on the water before it earns a page &mdash; hulls, batteries and remotes we would run ourselves.</p></div>
+    <div class="wc rv d3"><div class="wc-icon">&#129309;</div><div class="wc-t">FLEET &amp; RENTAL</div><p class="wc-d">Outfitting a resort, rental fleet or club? Volume pricing and commercial programs &mdash; WhatsApp us to talk terms.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="eyebrow rv">FAQ</div>
+  <h2 class="sec-h rv">QUESTIONS ANSWERED</h2>
+  <div class="faq-grid rv">
+    <div class="fi"><div class="fq">Which board is best for a beginner?<span class="fi-icon">+</span></div><div class="fa">Start with the H1 Glide &mdash; the EPP hull is forgiving on falls, the stance is wide, and the drainage-channel bottom keeps it steady while you build speed. If stability is your priority, the extra-wide 750mm G3 Cruise is the easiest board to learn on.</div></div>
+    <div class="fi"><div class="fq">Do you ship worldwide?<span class="fi-icon">+</span></div><div class="fa">Yes. We ship from our EU warehouse (Poland), USA warehouse (Los Angeles), UK, Queensland (Australia) and Shenzhen (China). Most countries receive orders within 3&ndash;7 business days. WhatsApp us for country-specific shipping estimates.</div></div>
+    <div class="fi"><div class="fq">What is the warranty policy?<span class="fi-icon">+</span></div><div class="fa">All WAVERIDER electric surfboards and e-foils carry a 1-year warranty covering manufacturing defects. Partner collection boats also carry a 1-year warranty. Contact WhatsApp support for claims.</div></div>
+    <div class="fi"><div class="fq">How long does charging take?<span class="fi-icon">+</span></div><div class="fa">The G2 fast charges in 2 hours. The H1 takes 2&ndash;3 hours. The Y1 E-Foil takes 3 hours. All chargers included, supporting 110V and 220V.</div></div>
+    <div class="fi"><div class="fq">Can I use an overseas warehouse to avoid import duties?<span class="fi-icon">+</span></div><div class="fa">We ship from 5 global warehouses: Poland (EU), Los Angeles (USA), Queensland (Australia), UK and Shenzhen (China). This often eliminates import complications. Contact us on WhatsApp to confirm your best route.</div></div>
+    <div class="fi"><div class="fq">What is the difference between the F0 and F2?<span class="fi-icon">+</span></div><div class="fa">Both are carbon boards. The F0 Sport (65 KM/H, 16 KW) is the performance step-up for experienced riders. The F2 Apex (75 KM/H, 20 KW) is the full-carbon competition build with an integrated race battery.</div></div>
+    <div class="fi"><div class="fq">Do I need experience to ride an E-Foil?<span class="fi-icon">+</span></div><div class="fa">No surfing experience required. The Y1 E-Foil has 24-gear speed control &mdash; start at walking pace and build gradually. Most riders achieve lift-off within 2&ndash;4 sessions.</div></div>
+    <div class="fi"><div class="fq">What is the return policy?<span class="fi-icon">+</span></div><div class="fa">Returns accepted within 14 days of delivery for unused products in original packaging. Items showing signs of use cannot be returned. Defective units under warranty will be replaced or repaired.</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- REVIEWS -->
+<div class="rv-sec">
+  <div class="rv-sec-head rv">
+    <div class="rv-sec-title">CUSTOMER REVIEWS</div>
+    <div class="rv-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="rv-score">4.9</span><span class="rv-count">/ 5 &mdash; 47 reviews</span></div>
+  </div>
+  <div class="rv-grid">
+
+    <div class="rv-card rv">
+      <div class="rv-head">
+        <div class="rv-av">T</div>
+        <div>
+          <div class="rv-name">Tyler W.</div>
+          <div class="rv-loc">Fort Lauderdale, FL</div>
+        </div>
+        <div class="rv-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      </div>
+      <p class="rv-text">&ldquo;Ordered two boards through WAVERIDER and the entire experience from enquiry to delivery was excellent. Communication was fast, shipping was tracked, and both products arrived exactly as described. Will be back for the E-Foil next season.&rdquo;</p>
+      <div class="rv-date">Jan 2025 &middot; Verified Purchase</div>
+    </div>
+    <div class="rv-card rv">
+      <div class="rv-head">
+        <div class="rv-av">A</div>
+        <div>
+          <div class="rv-name">Amara S.</div>
+          <div class="rv-loc">Rotterdam, NL</div>
+        </div>
+        <div class="rv-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      </div>
+      <p class="rv-text">&ldquo;Found WAVERIDER searching for electric watercraft suppliers that actually ship to Cameroon. They handled everything including customs documentation. Product arrived in perfect condition. The whole team was responsive throughout.&rdquo;</p>
+      <div class="rv-date">Feb 2025 &middot; Verified Purchase</div>
+    </div>
+    <div class="rv-card rv">
+      <div class="rv-head">
+        <div class="rv-av">D</div>
+        <div>
+          <div class="rv-name">David K.</div>
+          <div class="rv-loc">Melbourne, AU</div>
+        </div>
+        <div class="rv-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#3d2e1e"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      </div>
+      <p class="rv-text">&ldquo;Broad selection that covers every category from beginner boards to performance foils. Ordered before Christmas and it arrived in time despite the holiday period. Slight delay in initial confirmation email but once underway the process was smooth.&rdquo;</p>
+      <div class="rv-date">Dec 2024 &middot; Verified Purchase</div>
+    </div>
+    <div class="rv-card rv">
+      <div class="rv-head">
+        <div class="rv-av">L</div>
+        <div>
+          <div class="rv-name">Leila N.</div>
+          <div class="rv-loc">Lisbon, PT</div>
+        </div>
+        <div class="rv-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      </div>
+      <p class="rv-text">&ldquo;Browsed many suppliers before settling on WAVERIDER. The product range is genuinely comprehensive and the customer communication stood out. Delivery to Morocco was faster than quoted and packaging was immaculate. Already recommended to three friends.&rdquo;</p>
+      <div class="rv-date">Mar 2025 &middot; Verified Purchase</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div style="max-width:1400px;margin:0 auto;padding:48px 80px 32px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:40px;border-bottom:1px solid rgba(255,125,31,.12);padding-bottom:40px">
+      <div>
+        <div style="font-family:'Anton',sans-serif;font-size:28px;letter-spacing:.06em;margin-bottom:14px">WAVE<span style="color:#ff7d1f">RIDER</span></div>
+        <p style="font-size:13px;color:#8d7c67;line-height:1.7;max-width:240px">Electric surfboards, E-Foils, Yamaha WaveRunners, ZAR RIBs and water entertainment. 5 Global Warehouses. Ship worldwide.</p>
+        <div id="wrSocials" style="display:flex;gap:10px;margin-top:16px"></div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8d7c67;margin-bottom:16px">Contact Us</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="mailto:waverideboat@gmail.com" style="font-size:14px;color:#e6dccd;text-decoration:none;display:flex;align-items:center;gap:10px" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            waverideboat@gmail.com
+          </a>
+          <a href="tel:+18312964971" style="font-size:14px;color:#e6dccd;text-decoration:none;display:flex;align-items:center;gap:10px" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +1 (831) 296-4971
+          </a>
+          <a href="https://wa.me/18312964971" target="_blank" style="font-size:14px;color:#25D366;text-decoration:none;display:flex;align-items:center;gap:10px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8d7c67;margin-bottom:16px">Collections</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="/collections/electric.html" style="font-size:13px;color:#e6dccd;text-decoration:none" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">Electric Surfboards</a>
+          <a href="/collections/efoil.html" style="font-size:13px;color:#e6dccd;text-decoration:none" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">E-Foil</a>
+          <a href="/collections/boats.html" style="font-size:13px;color:#e6dccd;text-decoration:none" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">Boats</a>
+          <a href="/collections/gas.html" style="font-size:13px;color:#e6dccd;text-decoration:none" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">Gas Surfboards</a>
+          <a href="/collections/jetski.html" style="font-size:13px;color:#e6dccd;text-decoration:none" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">Jet Ski</a>
+          <a href="/collections/accessories.html" style="font-size:13px;color:#e6dccd;text-decoration:none" onmouseover="this.style.color='#ff7d1f'" onmouseout="this.style.color='#e6dccd'">Accessories</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div style="font-size:12px;color:#8d7c67">&copy; 2026 WAVERIDER. All rights reserved.</div>
+      <div style="display:flex;gap:22px">
+        <a href="#" style="font-size:12px;color:#8d7c67;text-decoration:none">Privacy</a>
+        <a href="#" style="font-size:12px;color:#8d7c67;text-decoration:none">Terms</a>
+        <a href="#" style="font-size:12px;color:#8d7c67;text-decoration:none">Returns</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Trust Badges -->
+    <div style="border-top:1px solid rgba(255,255,255,.06);margin-top:32px;padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8d7c67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8d7c67;white-space:nowrap">Secure Checkout</span>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="Visa"><svg width="30" height="17" viewBox="0 0 24 24" role="img" aria-label="Visa"><path fill="#1A1F71" d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg></div>
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="Mastercard"><svg width="28" height="17" viewBox="0 0 32 20" role="img" aria-label="Mastercard"><circle cx="12" cy="10" r="9.5" fill="#EB001B"/><circle cx="20" cy="10" r="9.5" fill="#F79E1B"/><path d="M16 2.6a9.5 9.5 0 0 1 0 14.8A9.5 9.5 0 0 1 16 2.6z" fill="#FF5F00"/></svg></div>
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="Apple Pay"><svg width="30" height="17" viewBox="0 0 24 24" role="img" aria-label="Apple Pay"><path fill="#000000" d="M2.15 4.318a42.16 42.16 0 0 0-.454.003c-.15.005-.303.013-.452.04a1.44 1.44 0 0 0-1.06.772c-.07.138-.114.278-.14.43-.028.148-.037.3-.04.45A10.2 10.2 0 0 0 0 6.222v11.557c0 .07.002.138.003.207.004.15.013.303.04.452.027.15.072.291.142.429a1.436 1.436 0 0 0 .63.63c.138.07.278.115.43.142.148.027.3.036.45.04l.208.003h20.194l.207-.003c.15-.004.303-.013.452-.04.15-.027.291-.071.428-.141a1.432 1.432 0 0 0 .631-.631c.07-.138.115-.278.141-.43.027-.148.036-.3.04-.45.002-.07.003-.138.003-.208l.001-.246V6.221c0-.07-.002-.138-.004-.207a2.995 2.995 0 0 0-.04-.452 1.446 1.446 0 0 0-1.2-1.201 3.022 3.022 0 0 0-.452-.04 10.448 10.448 0 0 0-.453-.003zm0 .512h19.942c.066 0 .131.002.197.003.115.004.25.01.375.032.109.02.2.05.287.094a.927.927 0 0 1 .407.407.997.997 0 0 1 .094.288c.022.123.028.258.031.374.002.065.003.13.003.197v11.552c0 .065 0 .13-.003.196-.003.115-.009.25-.032.375a.927.927 0 0 1-.5.693 1.002 1.002 0 0 1-.286.094 2.598 2.598 0 0 1-.373.032l-.2.003H1.906c-.066 0-.133-.002-.196-.003a2.61 2.61 0 0 1-.375-.032c-.109-.02-.2-.05-.288-.094a.918.918 0 0 1-.406-.407 1.006 1.006 0 0 1-.094-.288 2.531 2.531 0 0 1-.032-.373 9.588 9.588 0 0 1-.002-.197V6.224c0-.065 0-.131.002-.197.004-.114.01-.248.032-.375.02-.108.05-.199.094-.287a.925.925 0 0 1 .407-.406 1.03 1.03 0 0 1 .287-.094c.125-.022.26-.029.375-.032.065-.002.131-.002.196-.003zm4.71 3.7c-.3.016-.668.199-.88.456-.191.22-.36.58-.316.918.338.03.675-.169.888-.418.205-.258.345-.603.308-.955zm2.207.42v5.493h.852v-1.877h1.18c1.078 0 1.835-.739 1.835-1.812 0-1.07-.742-1.805-1.808-1.805zm.852.719h.982c.739 0 1.161.396 1.161 1.089 0 .692-.422 1.092-1.164 1.092h-.979zm-3.154.3c-.45.01-.83.28-1.05.28-.235 0-.593-.264-.981-.257a1.446 1.446 0 0 0-1.23.747c-.527.908-.139 2.255.374 2.995.249.366.549.769.944.754.373-.014.52-.242.973-.242.454 0 .586.242.98.235.41-.007.667-.366.915-.733.286-.417.403-.82.41-.841-.007-.008-.79-.308-.797-1.209-.008-.754.615-1.113.644-1.135-.352-.52-.9-.578-1.09-.593a1.123 1.123 0 0 0-.092-.002zm8.204.397c-.99 0-1.606.533-1.652 1.256h.777c.072-.358.369-.586.845-.586.502 0 .803.266.803.711v.309l-1.097.064c-.951.054-1.488.484-1.488 1.184 0 .72.548 1.207 1.332 1.207.526 0 1.032-.281 1.264-.727h.019v.659h.788v-2.76c0-.803-.62-1.317-1.591-1.317zm1.94.072l1.446 4.009c0 .003-.073.24-.073.247-.125.41-.33.571-.711.571-.069 0-.206 0-.267-.015v.666c.06.011.267.019.335.019.83 0 1.226-.312 1.568-1.283l1.5-4.214h-.868l-1.012 3.259h-.015l-1.013-3.26zm-1.167 2.189v.316c0 .521-.45.917-1.024.917-.442 0-.731-.228-.731-.579 0-.342.278-.56.769-.593z"/></svg></div>
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="PayPal"><svg width="18" height="17" viewBox="0 0 24 24" role="img" aria-label="PayPal"><path fill="#00457C" d="M7.016 19.198h-4.2a.562.562 0 0 1-.555-.65L5.093.584A.692.692 0 0 1 5.776 0h7.222c3.417 0 5.904 2.488 5.846 5.5-.006.25-.027.5-.066.747A6.794 6.794 0 0 1 12.071 12H8.743a.69.69 0 0 0-.682.583l-.325 2.056-.013.083-.692 4.39-.015.087zM19.79 6.142c-.01.087-.01.175-.023.261a7.76 7.76 0 0 1-7.695 6.598H9.007l-.283 1.795-.013.083-.692 4.39-.134.843-.014.088H6.86l-.497 3.15a.562.562 0 0 0 .555.65h3.612c.34 0 .63-.249.683-.585l.952-6.031a.692.692 0 0 1 .683-.584h2.126a6.793 6.793 0 0 0 6.707-5.752c.306-1.95-.466-3.744-1.89-4.906z"/></svg></div>
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="Zelle"><svg width="18" height="17" viewBox="0 0 24 24" role="img" aria-label="Zelle"><path fill="#6D1ED4" d="M13.559 24h-2.841a.483.483 0 0 1-.483-.483v-2.765H5.638a.667.667 0 0 1-.666-.666v-2.234a.67.67 0 0 1 .142-.412l8.139-10.382h-7.25a.667.667 0 0 1-.667-.667V3.914c0-.367.299-.666.666-.666h4.23V.483c0-.266.217-.483.483-.483h2.841c.266 0 .483.217.483.483v2.765h4.323c.367 0 .666.299.666.666v2.137a.67.67 0 0 1-.141.41l-8.19 10.481h7.665c.367 0 .666.299.666.666v2.477a.667.667 0 0 1-.666.667h-4.32v2.765a.483.483 0 0 1-.483.483Z"/></svg></div>
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="Cash App"><svg width="18" height="17" viewBox="0 0 24 24" role="img" aria-label="Cash App"><path fill="#00D632" d="M23.59 3.475a5.1 5.1 0 00-3.05-3.05c-1.31-.42-2.5-.42-4.92-.42H8.36c-2.4 0-3.61 0-4.9.4a5.1 5.1 0 00-3.05 3.06C0 4.765 0 5.965 0 8.365v7.27c0 2.41 0 3.6.4 4.9a5.1 5.1 0 003.05 3.05c1.3.41 2.5.41 4.9.41h7.28c2.41 0 3.61 0 4.9-.4a5.1 5.1 0 003.06-3.06c.41-1.3.41-2.5.41-4.9v-7.25c0-2.41 0-3.61-.41-4.91zm-6.17 4.63l-.93.93a.5.5 0 01-.67.01 5 5 0 00-3.22-1.18c-.97 0-1.94.32-1.94 1.21 0 .9 1.04 1.2 2.24 1.65 2.1.7 3.84 1.58 3.84 3.64 0 2.24-1.74 3.78-4.58 3.95l-.26 1.2a.49.49 0 01-.48.39H9.63l-.09-.01a.5.5 0 01-.38-.59l.28-1.27a6.54 6.54 0 01-2.88-1.57v-.01a.48.48 0 010-.68l1-.97a.49.49 0 01.67 0c.91.86 2.13 1.34 3.39 1.32 1.3 0 2.17-.55 2.17-1.42 0-.87-.88-1.1-2.54-1.72-1.76-.63-3.43-1.52-3.43-3.6 0-2.42 2.01-3.6 4.39-3.71l.25-1.23a.48.48 0 01.48-.38h1.78l.1.01c.26.06.43.31.37.57l-.27 1.37c.9.3 1.75.77 2.48 1.39l.02.02c.19.2.19.5 0 .68z"/></svg></div>
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="Bitcoin"><svg width="18" height="17" viewBox="0 0 24 24" role="img" aria-label="Bitcoin"><path fill="#F7931A" d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.548v-.002zm-6.35-4.613c.24-1.59-.974-2.45-2.64-3.03l.54-2.153-1.315-.33-.525 2.107c-.345-.087-.705-.167-1.064-.25l.526-2.127-1.32-.33-.54 2.165c-.285-.067-.565-.132-.84-.2l-1.815-.45-.35 1.407s.975.225.955.236c.535.136.63.486.615.766l-1.477 5.92c-.075.166-.24.406-.614.314.015.02-.96-.24-.96-.24l-.66 1.51 1.71.426.93.242-.54 2.19 1.32.327.54-2.17c.36.1.705.19 1.05.273l-.51 2.154 1.32.33.545-2.19c2.24.427 3.93.257 4.64-1.774.57-1.637-.03-2.58-1.217-3.196.854-.193 1.5-.76 1.68-1.93h.01zm-3.01 4.22c-.404 1.64-3.157.75-4.05.53l.72-2.9c.896.23 3.757.67 3.33 2.37zm.41-4.24c-.37 1.49-2.662.735-3.405.55l.654-2.64c.744.18 3.137.524 2.75 2.084v.006z"/></svg></div>
+        <div style="background:#f6f2ec;border-radius:5px;padding:4px 9px;height:28px;display:flex;align-items:center;justify-content:center" title="Bank / Wire"><svg width="16" height="15" viewBox="0 0 24 20" fill="none" stroke="#4a4038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="21" y2="20"/><line x1="6" y1="16" x2="6" y2="9"/><line x1="12" y1="16" x2="12" y2="9"/><line x1="18" y1="16" x2="18" y2="9"/><polygon points="12 0 22 6 2 6"/></svg></div>
+      </div>
+    </div>
+</footer>
+
+<script>
+// HERO SLIDESHOW — 7 images, video-style crossfade, looping
+(function(){
+  var slides = document.querySelectorAll('.h-slide');
+  var dotsEl = document.getElementById('hDots');
+  var cur = 0;
+  slides.forEach(function(_,i){
+    var d = document.createElement('div');
+    d.className = 'h-dot' + (i===0?' active':'');
+    d.addEventListener('click', function(){ go(i); });
+    dotsEl.appendChild(d);
+  });
+  var dots = dotsEl.querySelectorAll('.h-dot');
+  function go(n){
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+  setInterval(function(){ go(cur+1); }, 4500);
+})();
+
+// SCROLL REVEAL
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+},{threshold:0.1});
+document.querySelectorAll('.rv').forEach(function(el){ obs.observe(el); });
+
+// STAT COUNTERS
+var cobs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting) return;
+    var el = e.target, target = parseInt(el.dataset.t), cur = 0;
+    var step = target / (1500/16);
+    var t = setInterval(function(){
+      cur = Math.min(cur+step, target);
+      el.textContent = Math.floor(cur);
+      if(cur>=target) clearInterval(t);
+    }, 16);
+    cobs.unobserve(el);
+  });
+},{threshold:0.5});
+document.querySelectorAll('.ctr').forEach(function(el){ cobs.observe(el); });
+
+// FAQ
+document.querySelectorAll('.fq').forEach(function(q){
+  q.addEventListener('click', function(){
+    var item = q.closest('.fi');
+    var open = item.classList.contains('open');
+    document.querySelectorAll('.fi.open').forEach(function(i){ i.classList.remove('open'); });
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
+<script>
+(function(){
+  var nis = document.querySelectorAll('.nav-item');
+  nis.forEach(function(ni){
+    var btn = ni.querySelector('button');
+    if(!btn) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = ni.classList.contains('open');
+      nis.forEach(function(x){ x.classList.remove('open'); });
+      if(!isOpen) ni.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(e.target.closest('#mobBtn') || e.target.closest('#mobDrawer')) return;
+    nis.forEach(function(x){ x.classList.remove('open'); });
+  });
+  document.querySelectorAll('.nav-drop a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nis.forEach(function(x){ x.classList.remove('open'); });
+    });
+  });
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════
+     POPUP
+═══════════════════════════════════════════════ -->
+<div id="rwPopup" style="display:none;position:fixed;inset:0;z-index:9000;background:linear-gradient(rgba(13,9,6,.72),rgba(13,9,6,.72)),url('/images/FX-HO.webp') center/cover no-repeat;align-items:center;justify-content:center;padding:20px;box-sizing:border-box">
+  <div style="background:#16100a;border:1px solid rgba(255,125,31,.28);border-radius:20px;max-width:460px;width:100%;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.8);position:relative">
+    <button onclick="rwClosePopup()" style="position:absolute;top:12px;right:14px;background:none;border:none;color:#8d7c67;font-size:26px;cursor:pointer;line-height:1;z-index:2;padding:0">&times;</button>
+
+    <!-- Step 1: Offer -->
+    <div id="rwStep1">
+      <div style="background:linear-gradient(135deg,#ff7d1f,#b3480d);padding:28px 32px 22px;text-align:center">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(13,9,6,.65);margin-bottom:8px">Welcome to WAVERIDER</div>
+        <div style="font-family:'Anton',sans-serif;font-size:58px;color:#0d0906;line-height:.88;letter-spacing:.02em;margin-bottom:4px">$500 OFF</div>
+        <div style="font-size:14px;font-weight:600;color:rgba(13,9,6,.7)">your first order</div>
+      </div>
+      <div style="padding:26px 28px 28px">
+        <p style="font-size:15px;color:#e6dccd;line-height:1.65;margin:0 0 20px;text-align:center">Drop your name and email and we will send your code instantly and make sure you get priority service.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+          <input id="rwPopName" type="text" placeholder="Your first name" autocomplete="given-name"
+            style="background:#0d0906;border:1.5px solid rgba(255,125,31,.18);border-radius:9px;padding:13px 15px;font-size:14px;color:#fff;font-family:Inter,sans-serif;outline:none;width:100%;box-sizing:border-box;transition:border-color .2s"
+            onfocus="this.style.borderColor='#ff7d1f'" onblur="this.style.borderColor='rgba(255,125,31,.18)'">
+          <input id="rwPopEmail" type="email" placeholder="Your email address"
+            style="background:#0d0906;border:1.5px solid rgba(255,125,31,.18);border-radius:9px;padding:13px 15px;font-size:14px;color:#fff;font-family:Inter,sans-serif;outline:none;width:100%;box-sizing:border-box;transition:border-color .2s"
+            onfocus="this.style.borderColor='#ff7d1f'" onblur="this.style.borderColor='rgba(255,125,31,.18)'">
+        </div>
+        <button id="rwClaimBtn" onclick="rwClaimOffer()"
+          style="width:100%;background:#ff7d1f;color:#0d0906;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:15px;border-radius:10px;border:none;cursor:pointer;font-family:Inter,sans-serif;box-shadow:0 0 24px rgba(255,125,31,.35);transition:box-shadow .2s,transform .2s">
+          Claim My $500 Code
+        </button>
+        <p style="font-size:11px;color:#8d7c67;text-align:center;margin:10px 0 0">One per customer. Valid on first order only.</p>
+      </div>
+    </div>
+
+    <!-- Step 2: Success -->
+    <div id="rwStep2" style="display:none;padding:40px 28px;text-align:center">
+      <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,125,31,.1);border:2px solid #ff7d1f;display:flex;align-items:center;justify-content:center;margin:0 auto 18px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff7d1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div id="rwGreet" style="font-family:'Anton',sans-serif;font-size:32px;letter-spacing:.03em;margin-bottom:8px;color:#fff"></div>
+      <p style="font-size:15px;color:#e6dccd;line-height:1.65;margin:0 0 22px">Your exclusive discount code is ready. Copy it and paste it in the order notes at checkout.</p>
+      <div style="background:#0d0906;border:1.5px solid rgba(255,125,31,.3);border-radius:12px;padding:16px 18px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span style="font-family:'Anton',sans-serif;font-size:32px;letter-spacing:.14em;color:#ff7d1f">WAVE500</span>
+        <button id="rwCopyBtn" onclick="rwCopyCode()"
+          style="background:#ff7d1f;color:#0d0906;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;border-radius:7px;border:none;cursor:pointer;font-family:Inter,sans-serif;white-space:nowrap;flex-shrink:0;transition:background .2s">
+          Copy Code
+        </button>
+      </div>
+      <p id="rwSubMsg" style="font-size:13px;color:#8d7c67;line-height:1.65;margin:0 0 22px"></p>
+      <button onclick="rwClosePopup()"
+        style="background:none;border:1.5px solid rgba(255,125,31,.2);color:#e6dccd;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:12px 28px;border-radius:9px;cursor:pointer;font-family:Inter,sans-serif;transition:border-color .2s,color .2s"
+        onmouseover="this.style.borderColor='#ff7d1f';this.style.color='#ff7d1f'"
+        onmouseout="this.style.borderColor='rgba(255,125,31,.2)';this.style.color='#e6dccd'">
+        Start Shopping
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     CHAT WIDGET
+═══════════════════════════════════════════════ -->
+<div style="position:fixed;bottom:24px;right:24px;z-index:8000;display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+
+  <!-- Panel -->
+  <div id="rwChatPanel" style="display:none;width:340px;background:#16100a;border:1px solid rgba(255,125,31,.2);border-radius:18px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.7)">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#ff7d1f,#b3480d);padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(13,9,6,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d0906" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div style="font-family:'Anton',sans-serif;font-size:15px;color:#0d0906;letter-spacing:.04em;line-height:1.2">WAVERIDER Support</div>
+          <div style="font-size:11px;color:rgba(13,9,6,.6);display:flex;align-items:center;gap:4px">
+            <span style="width:6px;height:6px;border-radius:50%;background:rgba(13,9,6,.5);display:inline-block"></span>
+            Typically replies in minutes
+          </div>
+        </div>
+      </div>
+      <button onclick="rwToggleChat()" style="background:rgba(13,9,6,.2);border:none;color:#0d0906;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1">&times;</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="rwMsgs" style="height:260px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth"></div>
+
+    <!-- Name + Email (shown before first message) -->
+    <div id="rwInfoFields" style="padding:0 12px 10px;display:flex;flex-direction:column;gap:8px">
+      <input id="rwChatName" type="text" placeholder="Your name" autocomplete="given-name"
+        style="background:#0d0906;border:1.5px solid rgba(255,125,31,.15);border-radius:8px;padding:10px 12px;font-size:13px;color:#fff;font-family:Inter,sans-serif;outline:none;width:100%;box-sizing:border-box;transition:border-color .2s"
+        onfocus="this.style.borderColor='#ff7d1f'" onblur="this.style.borderColor='rgba(255,125,31,.15)'">
+      <input id="rwChatEmail" type="email" placeholder="Your email" autocomplete="email"
+        style="background:#0d0906;border:1.5px solid rgba(255,125,31,.15);border-radius:8px;padding:10px 12px;font-size:13px;color:#fff;font-family:Inter,sans-serif;outline:none;width:100%;box-sizing:border-box;transition:border-color .2s"
+        onfocus="this.style.borderColor='#ff7d1f'" onblur="this.style.borderColor='rgba(255,125,31,.15)'">
+    </div>
+
+    <!-- Input row -->
+    <div style="padding:0 12px 14px;display:flex;gap:8px">
+      <input id="rwChatInput" type="text" placeholder="Type your message..."
+        style="flex:1;background:#0d0906;border:1.5px solid rgba(255,125,31,.15);border-radius:9px;padding:10px 12px;font-size:13px;color:#fff;font-family:Inter,sans-serif;outline:none;box-sizing:border-box;transition:border-color .2s"
+        onfocus="this.style.borderColor='#ff7d1f'" onblur="this.style.borderColor='rgba(255,125,31,.15)'"
+        onkeydown="if(event.key==='Enter'){event.preventDefault();rwSend();}">
+      <button onclick="rwSend()"
+        style="background:#ff7d1f;border:none;border-radius:9px;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:box-shadow .2s"
+        onmouseover="this.style.boxShadow='0 0 16px rgba(255,125,31,.5)'"
+        onmouseout="this.style.boxShadow='none'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0d0906" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Toggle button -->
+  <button onclick="rwToggleChat()" id="rwChatBtn"
+    style="width:56px;height:56px;border-radius:50%;background:#ff7d1f;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(255,125,31,.45);position:relative;transition:transform .2s,box-shadow .2s"
+    onmouseover="this.style.transform='scale(1.08)';this.style.boxShadow='0 12px 32px rgba(255,125,31,.6)'"
+    onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 8px 24px rgba(255,125,31,.45)'">
+    <svg id="rwIcoChat" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d0906" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg id="rwIcoClose" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d0906" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <span id="rwBadge" style="display:none;position:absolute;top:-3px;right:-3px;background:#ef4444;color:#fff;font-size:9px;font-weight:900;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;border:2px solid #0d0906;line-height:1">1</span>
+  </button>
+</div>
+
+<style>
+#rwMsgs::-webkit-scrollbar{width:3px}
+#rwMsgs::-webkit-scrollbar-thumb{background:rgba(255,125,31,.2);border-radius:2px}
+@keyframes rwBounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+</style>
+
+<script>
+// ── POPUP ──────────────────────────────────────────────────────────
+var rwChatOpen = false;
+var rwStarted  = false;
+var rwUserName = sessionStorage.getItem('rw_name') || '';
+
+function showPopup() {
+  document.getElementById('rwPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+// Auto-fire on first visit (3s for test, change to 10000 on live)
+if (!sessionStorage.getItem('rw_pop')) {
+  setTimeout(showPopup, 10000);
+}
+
+function rwClosePopup() {
+  document.getElementById('rwPopup').style.display = 'none';
+  document.body.style.overflow = '';
+  sessionStorage.setItem('rw_pop', '1');
+  setTimeout(function () {
+    var b = document.getElementById('rwBadge');
+    if (b) { b.style.display = 'flex'; }
+  }, 2000);
+}
+
+document.getElementById('rwPopup').addEventListener('click', function (e) {
+  if (e.target === this) rwClosePopup();
+});
+
+function rwClaimOffer() {
+  var nameEl  = document.getElementById('rwPopName');
+  var emailEl = document.getElementById('rwPopEmail');
+  var name    = nameEl.value.trim();
+  var email   = emailEl.value.trim();
+
+  if (!name)  { nameEl.style.borderColor  = '#ef4444'; nameEl.focus();  return; }
+  if (!email || !email.includes('@')) { emailEl.style.borderColor = '#ef4444'; emailEl.focus(); return; }
+
+  var btn = document.getElementById('rwClaimBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch('/api/lead', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      type: 'popup',
+      name: name,
+      email: email,
+      page: window.location.href
+    })
+  }).catch(function () {}).finally(function () {
+    var first = name.split(' ')[0];
+    sessionStorage.setItem('rw_pop',  '1');
+    sessionStorage.setItem('rw_name', first);
+    rwUserName = first;
+    document.getElementById('rwStep1').style.display = 'none';
+    document.getElementById('rwStep2').style.display = 'block';
+    document.getElementById('rwGreet').textContent   = 'Hey ' + first + ', you are in!';
+    document.getElementById('rwSubMsg').textContent  =
+      'We have your email. Paste code WAVE500 in the order notes at checkout and we will apply your $500 discount before processing.';
+  });
+}
+
+function rwCopyCode() {
+  var btn = document.getElementById('rwCopyBtn');
+  function done() {
+    btn.textContent = 'Copied!';
+    btn.style.background = '#22c55e';
+    setTimeout(function () { btn.textContent = 'Copy Code'; btn.style.background = '#ff7d1f'; }, 2500);
+  }
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText('WAVE500').then(done).catch(done);
+  } else {
+    var t = document.createElement('textarea');
+    t.value = 'WAVE500';
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+    done();
+  }
+}
+
+// ── CHAT ───────────────────────────────────────────────────────────
+function rwInitMsgs() {
+  var greeting = rwUserName
+    ? 'Hey ' + rwUserName + '! Welcome back. What can I help you with today?'
+    : 'Hey! Welcome to WAVERIDER. I am here to help you find the right board, boat or accessory. What are you looking for?';
+  var msgs = document.getElementById('rwMsgs');
+  msgs.innerHTML = '';
+  rwBubble(greeting, false);
+}
+
+function rwToggleChat() {
+  rwChatOpen = !rwChatOpen;
+  document.getElementById('rwChatPanel').style.display  = rwChatOpen ? 'block' : 'none';
+  document.getElementById('rwIcoChat').style.display    = rwChatOpen ? 'none'  : 'block';
+  document.getElementById('rwIcoClose').style.display   = rwChatOpen ? 'block' : 'none';
+  document.getElementById('rwBadge').style.display      = 'none';
+  if (rwChatOpen) {
+    rwInitMsgs();
+    setTimeout(function () { document.getElementById('rwChatInput').focus(); }, 80);
+  }
+}
+
+function rwBubble(text, isUser) {
+  var msgs = document.getElementById('rwMsgs');
+  var d = document.createElement('div');
+  d.style.cssText = isUser
+    ? 'background:#ff7d1f;border-radius:14px 14px 4px 14px;padding:10px 14px;max-width:82%;margin-left:auto;align-self:flex-end'
+    : 'background:#241a10;border-radius:14px 14px 14px 4px;padding:10px 14px;max-width:88%';
+  var p = document.createElement('p');
+  p.style.cssText = 'margin:0;font-size:13px;line-height:1.6;color:' + (isUser ? '#0d0906' : '#e6dccd');
+  p.textContent = text;
+  d.appendChild(p);
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function rwTyping() {
+  var msgs = document.getElementById('rwMsgs');
+  var d = document.createElement('div');
+  d.id = 'rwTyping';
+  d.style.cssText = 'background:#241a10;border-radius:14px 14px 14px 4px;padding:12px 14px;display:inline-flex;gap:5px;align-items:center';
+  for (var i = 0; i < 3; i++) {
+    var s = document.createElement('span');
+    s.style.cssText = 'width:7px;height:7px;border-radius:50%;background:#8d7c67;display:inline-block;animation:rwBounce 1.1s infinite ' + (i * 0.18) + 's';
+    d.appendChild(s);
+  }
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+  return d;
+}
+
+function rwWaBtn(msg) {
+  var msgs = document.getElementById('rwMsgs');
+  var d = document.createElement('div');
+  d.style.marginTop = '4px';
+  var a = document.createElement('a');
+  a.href = 'https://wa.me/18312964971?text=' + encodeURIComponent('Hi, I was chatting on WAVERIDER about: ' + msg.substring(0, 80));
+  a.target = '_blank';
+  a.style.cssText = 'background:#25D366;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px';
+  a.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Continue on WhatsApp';
+  d.appendChild(a);
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function rwReply(msg, n) {
+  var m = msg.toLowerCase();
+  n = n || 'there';
+  if (m.match(/price|cost|how much/))
+    return 'Great question ' + n + '. Electric surfboards start at $1,520 for the H1 Glide, up to $5,592 for the F2 Apex. E-Foils from $1,800. All include 5 Global Warehouses with 3 to 7 day delivery. Which category interests you?';
+  if (m.match(/ship|deliver|how long|warehouse/))
+    return 'We ship from 5 warehouses: Poland, Los Angeles, Queensland (AU), UK and Shenzhen (CN) ' + n + '. Delivery is 3 to 7 business days. Orders over $5,000 ship free. Which country are you in?';
+  if (m.match(/electric|surfboard|h1|g2|g3|f0|f2|glide|bolt|cruise|apex/))
+    return 'Our electric lineup has 5 boards ' + n + '. From the H1 Glide at $1,520 to the 75KM per hour F2 Apex at $5,592. The G2 Bolt is our best seller. Want help picking based on your experience level?';
+  if (m.match(/foil|efoil|e-foil|fly|hydrofoil|y1/))
+    return 'The Y1 E-Foil flies above water at 45KM per hour with no waves needed ' + n + '. Y1 Carbon is $2,200, Y1 EPP is $1,800. Same specs, different shell. Which fits your budget?';
+  if (m.match(/jet ?ski|waverunner|yamaha/))
+    return 'We carry the full Yamaha WaveRunner 2025 lineup ' + n + ' \u2014 ten models from the $8,000 JetBlaster up to the 250HP supercharged GP SVHO, shipped from our 5 warehouses. Which model are you eyeing?';
+  if (m.match(/boat|rib|zar|console|bbq|kart|supercar|swan|v1/))
+    return 'Our boat lineup is something else ' + n + '. The V1 electric kart boat hits 50KM per hour at $3,196, and we now carry Honda-powered ZAR RIBs from 3.9m to 4.9m. BBQ boats, bumper boats and pedal boats too. Personal use or commercial?';
+  if (m.match(/gas|petrol|efi|raptor/))
+    return 'The Raptor EFI runs a 110CC 2-stroke water-cooled engine with Electronic Fuel Injection ' + n + '. Carbon fiber shell, titanium exhaust. EFI 02 is $2,440, EFI 03 is $2,600.';
+  if (m.match(/battery|charge|run time/))
+    return 'Battery life varies by board ' + n + '. H1 Glide runs about 60 minutes, G2 and G3 up to 120 minutes, E-Foil 60 to 90 minutes. We sell spares for every model too.';
+  if (m.match(/discount|coupon|code|offer|deal/))
+    return 'Use code WAVE500 at checkout ' + n + ' to save $500 on your first order. Works on any board or boat.';
+  if (m.match(/beginner|first time|start|new/))
+    return 'For a first board we recommend the H1 Glide at $1,520 ' + n + '. Easy to learn, forgiving and great battery life. The G3 is also great if you want something wider and more stable from day one.';
+  if (m.match(/warranty|guarantee|return/))
+    return 'All boards come with a 1-year warranty ' + n + '. We handle issues directly and with EU and USA stock, parts and replacements are fast.';
+  if (m.match(/hello|hi|hey|morning|afternoon|evening/))
+    return 'Hey ' + n + '! Great to have you here. Electric surfboards, E-Foils, boats and accessories all in stock. What brings you in today?';
+  return 'Thanks for that ' + n + '. Our team has been notified and will follow up at your email shortly. Feel free to browse the lineup in the meantime!';
+}
+
+function rwSend() {
+  var nameEl  = document.getElementById('rwChatName');
+  var emailEl = document.getElementById('rwChatEmail');
+  var inputEl = document.getElementById('rwChatInput');
+  var msg     = inputEl.value.trim();
+  if (!msg) return;
+
+  if (!rwStarted) {
+    var name  = nameEl.value.trim();
+    var email = emailEl.value.trim();
+    if (!name)  { nameEl.style.borderColor  = '#ef4444'; nameEl.focus();  return; }
+    if (!email || !email.includes('@')) { emailEl.style.borderColor = '#ef4444'; emailEl.focus(); return; }
+
+    rwUserName = name.split(' ')[0];
+    rwStarted  = true;
+    sessionStorage.setItem('rw_name', rwUserName);
+    document.getElementById('rwInfoFields').style.display = 'none';
+
+    fetch('/api/lead', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'chat',
+        name: name,
+        email: email,
+        message: msg,
+        page: window.location.href
+      })
+    }).catch(function () {});
+  }
+
+  inputEl.value = '';
+  rwBubble(msg, true);
+  var dot = rwTyping();
+
+  setTimeout(function () {
+    dot.remove();
+    rwBubble(rwReply(msg, rwUserName), false);
+    setTimeout(function () { rwWaBtn(msg); }, 400);
+  }, 1400);
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    if (document.getElementById('rwPopup').style.display !== 'none') rwClosePopup();
+    if (rwChatOpen) rwToggleChat();
+  }
+});
+</script>
+
+
+<script>
+function toggleMob(e){
+  if(e) e.stopPropagation();
+  var btn=document.getElementById('mobBtn');
+  var drw=document.getElementById('mobDrawer');
+  btn.classList.toggle('open');
+  drw.classList.toggle('open');
+  document.body.style.overflow = drw.classList.contains('open') ? 'hidden' : '';
+}
+function closeMob(){
+  document.getElementById('mobBtn').classList.remove('open');
+  document.getElementById('mobDrawer').classList.remove('open');
+  document.body.style.overflow='';
+}
+</script>
+</body>
+</html>

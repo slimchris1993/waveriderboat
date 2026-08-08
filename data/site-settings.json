@@ -1,0 +1,24 @@
+{
+ "whatsapp": "18312964971",
+ "socials": {
+  "instagram": "",
+  "facebook": "",
+  "tiktok": "",
+  "youtube": "",
+  "x": ""
+ },
+ "payments": {
+  "mode": "manual",
+  "methods": {
+   "card": "",
+   "applepay": "",
+   "paypal": "",
+   "zelle": "",
+   "cashapp": "",
+   "bank": "",
+   "crypto": "",
+   "other": ""
+  },
+  "otherLabel": ""
+ }
+}
