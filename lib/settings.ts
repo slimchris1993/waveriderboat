@@ -52,6 +52,14 @@ export const PAYMENT_METHOD_LABELS: Record<PaymentMethodKey, string> = {
   other: "Other",
 };
 
+/**
+ * Numbers the business no longer uses. A stored settings record written
+ * before a number changed would otherwise keep rewriting every WhatsApp
+ * link back to the retired number at runtime, silently overriding the
+ * pages. Retired values fall through to the current default instead.
+ */
+const RETIRED_WHATSAPP = ["18312964971"];
+
 const DEFAULTS: SiteSettings = {
   whatsapp: "14344800777",
   livechatEmbed: "",
@@ -82,7 +90,10 @@ export async function getSettings(): Promise<SiteSettings> {
   if (!raw) raw = fsRead<Partial<SiteSettings>>("site-settings");
   if (!raw) return structuredClone(DEFAULTS);
   return {
-    whatsapp: raw.whatsapp ?? DEFAULTS.whatsapp,
+    whatsapp:
+      raw.whatsapp && !RETIRED_WHATSAPP.includes(raw.whatsapp)
+        ? raw.whatsapp
+        : DEFAULTS.whatsapp,
     livechatEmbed: raw.livechatEmbed ?? "",
     socials: { ...DEFAULTS.socials, ...raw.socials },
     payments: {
