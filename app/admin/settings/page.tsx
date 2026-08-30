@@ -8,9 +8,9 @@ const input =
 
 const METHOD_HINTS: Record<PaymentMethodKey, string> = {
   card: "e.g. payment link for card payments (Stripe/Square link)",
-  applepay: "e.g. Apple Pay to +1 831 296 4971",
+  applepay: "e.g. Apple Pay to +1 434 480 0777",
   paypal: "e.g. paypal.me/waverider or PayPal email",
-  zelle: "e.g. Zelle to owner@gmail.com / +1 831 296 4971",
+  zelle: "e.g. Zelle to owner@gmail.com / +1 434 480 0777",
   cashapp: "e.g. Cash App: $waverider",
   bank: "e.g. Account name / routing / account number / SWIFT for wires",
   crypto: "e.g. BTC: bc1q… · USDT (TRC20): TX…",
@@ -149,7 +149,7 @@ export default async function AdminSettingsPage({
             <input
               name="whatsapp"
               defaultValue={s.whatsapp}
-              placeholder="18312964971"
+              placeholder="14344800777"
               className={`${input} mt-1.5`}
             />
           </label>

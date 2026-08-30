@@ -53,7 +53,7 @@ export const PAYMENT_METHOD_LABELS: Record<PaymentMethodKey, string> = {
 };
 
 const DEFAULTS: SiteSettings = {
-  whatsapp: "18312964971",
+  whatsapp: "14344800777",
   livechatEmbed: "",
   socials: { instagram: "", facebook: "", tiktok: "", youtube: "", x: "" },
   payments: {
